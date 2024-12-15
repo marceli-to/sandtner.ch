@@ -1,0 +1,37 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+          -
+            handle: byline
+            field:
+              type: text
+              display: Byline
+          -
+            handle: address
+            field:
+              type: textarea
+              display: Adresse
+          -
+            handle: phone
+            field:
+              type: text
+              display: Telefon
+          -
+            handle: email
+            field:
+              input_type: email
+              type: text
+              display: E-Mail
+          -
+            handle: google_maps_url
+            field:
+              type: text
+              display: 'Google Maps URL'

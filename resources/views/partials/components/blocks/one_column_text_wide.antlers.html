@@ -1,0 +1,19 @@
+{{ partial:layout/outer }}
+  {{ partial:layout/inner }}
+    {{ if anchor_name }}
+      {{ partial:components/blocks/anchor }}
+    {{ /if }}
+    {{ if title }}
+      {{ partial:components/headings/h2 class="mb-15 lg:mb-25"  }}
+        {{ title }}
+      {{ /partial:components/headings/h2 }}
+    {{ /if }}
+    {{ partial:layout/grid }}
+      {{ if editor }}
+        <article class="text-pretty md:col-span-full lg:col-span-8">
+          {{ partial:components/blocks/editor  }}
+        </article>
+      {{ /if }}
+    {{ /partial:layout/grid }}
+  {{ /partial:layout/inner }}
+{{ /partial:layout/outer }}

@@ -1,0 +1,7 @@
+.swiper-pagination-bullet {
+  @apply !size-9 !bg-white !opacity-50;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  @apply !bg-black !opacity-100;
+}

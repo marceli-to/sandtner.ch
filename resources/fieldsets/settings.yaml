@@ -1,0 +1,19 @@
+title: Settings
+fields:
+  -
+    import: theme_selector
+  -
+    handle: debug
+    field:
+      type: toggle
+      display: Debug
+  -
+    handle: template
+    field:
+      type: template
+      display: Template
+  -
+    handle: layout
+    field:
+      type: template
+      display: Layout

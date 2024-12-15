@@ -1,0 +1,42 @@
+@import "typo/webfonts.css";
+@import "partials/forms.css";
+@import "vendor/swiper.css";
+@import "theme.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] { display: none !important; }
+
+main p:not(:last-child) {
+}
+
+main a {
+}
+
+main ul {
+  @apply flex flex-col space-y-5 lg:space-y-10
+}
+
+main ul:not(:last-child) {
+  @apply mb-20 lg:mb-30
+}
+
+main ul p {
+  @apply inline
+}
+
+b, strong {
+}
+
+table td {
+  @apply align-top
+}
+
+/* Headings */
+h1, h2 {
+}
+
+h3 {
+}

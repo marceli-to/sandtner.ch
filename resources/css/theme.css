@@ -1,0 +1,13 @@
+.theme-tangerine {
+  @apply bg-tangerine;
+}
+
+.theme-silver {
+  @apply bg-silver;
+}
+
+.theme-graphite {
+  @apply bg-graphite;
+}
+
+
