@@ -28,3 +28,13 @@ tabs:
               type: text
               display: Youtube
               localizable: true
+          -
+            handle: twitter
+            field:
+              type: text
+              display: Twitter
+          -
+            handle: google_plus
+            field:
+              type: text
+              display: 'Google Plus'

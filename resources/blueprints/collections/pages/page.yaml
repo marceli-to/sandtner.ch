@@ -27,94 +27,20 @@ tabs:
                   display: Hauptelemente
                   icon: addon-boxes-stack
                   sets:
-                    intro_homepage:
-                      display: 'Intro Homepage'
-                      instructions: 'Intro für Homepage hinzufügen.'
-                      icon: text-formatting-image-left
-                      fields:
-                        -
-                          import: intro_homepage
-                    intro_content:
-                      display: 'Intro Inhaltsseite'
-                      instructions: 'Intro für Inhaltsseiten hinzufügen.'
-                      icon: text-formatting-image-top
-                      fields:
-                        -
-                          import: intro_content
-                    page_teaser:
-                      display: Seitenteaser
-                      instructions: 'Seitenteaser hinzufügen'
-                      icon: text-formatting-image-top
-                      fields:
-                        -
-                          import: page_teaser
-                    two_columns_text_image:
-                      display: 'Inhalt zweispaltig (Text, Bild)'
-                      instructions: 'Inhalt mit 2 Spalten (Text, Bild) hinzufügen'
-                      icon: text-formatting-wrap-image-left
-                      fields:
-                        -
-                          import: two_columns_text_image
-                    two_columns_text_only:
-                      display: 'Inhalt zweispaltig (nur Text)'
-                      instructions: 'Inhalt mit 2 Spalten (Text) hinzufügen'
-                      icon: text-formatting-initial-letter
-                      fields:
-                        -
-                          import: two_columns_text_only
-                    one_column_text_wide:
-                      display: 'Inhalt einspaltig (nur Text)'
-                      instructions: 'Inhalt einspaltig (nur Text) hinzufügen'
-                      icon: text-formatting-initial-letter
-                      fields:
-                        -
-                          import: one_column_text_wide
-                    three_columns_lead_text_image:
-                      display: 'Inhalt dreispaltig (Lead, Text, Bild)'
-                      instructions: 'Inhalt dreispaltig (Lead, Text, Bild) hinzufügen'
-                      icon: text-formatting-image-left
-                      fields:
-                        -
-                          import: three_columns_lead_text_image
-                    two_columns_text_infobox:
-                      display: 'Inhalt zweispaltig (Text, Infobox)'
-                      instructions: 'Inhalt zweispaltig (Text, Infobox) hinzufügen'
-                      icon: text-formatting-image-right
-                      fields:
-                        -
-                          import: two_columns_text_infobox
-                    single_image:
-                      display: Einzelbild
-                      instructions: 'Einzelbild hinzufügen'
-                      icon: media-image-picture-orientation
-                      fields:
-                        -
-                          import: image
-                    three_columns_text_image_info:
-                      display: 'Inhalt dreispaltig (Text, Bild, Info)'
-                      instructions: 'Inhalt dreispaltig (Text, Bild, Infobox) hinzufügen'
-                      icon: text-formatting-wrap-image-left
-                      fields:
-                        -
-                          import: three_columns_text_image_info
-                    two_columns_articles:
-                      display: 'Inhalt zweispaltig (Artikel mit Bild/Text)'
-                      instructions: 'Inhalt zweispaltig (Artikel mit Bild/Text) hinzufügen'
-                      icon: text-formatting-image-top
-                      fields:
-                        -
-                          import: two_columns_articles
+                    neues_set:
+                      display: 'Neues Set'
+                      fields: {  }
                 special_elements:
                   display: Spezialelemente
                   icon: addon-boxes-stack
                   sets:
-                    slideshow_fullscreen:
-                      display: 'Slideshow (Fullscreen)'
-                      instructions: 'Slideshow (Fullscreen) hinzufügen'
+                    slideshow:
+                      display: Slideshow
+                      instructions: 'Slideshow hinzufügen'
                       icon: media-image-picture-gallery
                       fields:
                         -
-                          import: slideshow_fullscreen
+                          import: slideshow
                     video:
                       display: Video
                       instructions: 'Video hinzufügen'
@@ -122,27 +48,6 @@ tabs:
                       fields:
                         -
                           import: video
-                    special_teaser:
-                      display: Spezialteaser
-                      instructions: 'Spezialteaser (z.b. Sonderausstellung) hinzufügen'
-                      icon: alert-alarm-bell
-                      fields:
-                        -
-                          import: special_teaser
-                    event_teaser:
-                      display: Veranstaltungsteaser
-                      instructions: 'Veranstaltungsteaser hinzufügen'
-                      icon: dashboard-layout
-                      fields:
-                        -
-                          import: event_teaser
-                    shop_teaser:
-                      display: Shopteaser
-                      instructions: 'Shopteaser hinzufügen'
-                      icon: media-image-picture-gallery
-                      fields:
-                        -
-                          import: shop_teaser
                     anchor:
                       display: Anker
                       instructions: 'Ankerpunkt für Inhalte hinzufügen'
@@ -150,20 +55,6 @@ tabs:
                       fields:
                         -
                           import: anchor
-                    opening_hours_pricing:
-                      display: Öffnungszeiten/Preise
-                      instructions: 'Öffnungszeiten/Preise  hinzufügen'
-                      icon: dashboard-layout-3
-                      fields:
-                        -
-                          import: opening_hours_pricing
-                    impressions:
-                      display: 'Impressionen (Bilder)'
-                      instructions: 'Impressionen (Bilder) hinzufügen'
-                      icon: media-image-picture-gallery
-                      fields:
-                        -
-                          import: impressions
   seo:
     display: SEO
     sections:

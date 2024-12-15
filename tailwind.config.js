@@ -29,7 +29,7 @@ export default {
       },      
 
       fontFamily: {
-        'calibre-bold': ['Calibre-Bold', ...defaultTheme.fontFamily.sans],
+        'open-sans': ['Open Sans', ...defaultTheme.fontFamily.sans],
       },
 
       fontSize: {

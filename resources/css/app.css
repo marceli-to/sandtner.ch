@@ -20,7 +20,6 @@ main ul {
 }
 
 main ul:not(:last-child) {
-  @apply mb-20 lg:mb-30
 }
 
 main ul p {
@@ -35,8 +34,5 @@ table td {
 }
 
 /* Headings */
-h1, h2 {
-}
-
-h3 {
+h1, h2, h3 {
 }
