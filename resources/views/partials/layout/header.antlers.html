@@ -1,4 +1,34 @@
-<header class="{{ class }} sticky z-90 top-0 bg-white w-full">
+<header class="{{ class }} sticky z-90 top-0 w-full">
+  <div class="bg-white w-full">
+    {{ partial:layout/inner class="hidden md:flex md:gap-x-20 md:h-38" }}
+      <a 
+        href="{{ contact_information:google_maps_url }}" 
+        target="_blank"
+        class="md:h-[inherit] flex items-center gap-x-5 leading-none hover:text-tangerine transition-colors"
+        title="Finden Sie uns auf Google Maps">
+        {{ partial:icons/marker class="h-15 w-auto "}}
+        {{ contact_information:street }}
+        <span class="text-tangerine">|</span>
+        {{ contact_information:location }}
+      </a>
+      <a 
+        href="{{ contact_information:phone }}"
+        target="_blank"
+        class="md:h-[inherit] flex items-center gap-x-5 leading-none hover:text-tangerine transition-colors""
+        title="Rufen Sie uns an">
+        {{ partial:icons/phone class="h-15 w-auto "}}
+        {{ contact_information:phone }}
+      </a>
+      <a 
+        href="{{ contact_information:email }}"
+        target="_blank"
+        class="md:h-[inherit] flex items-center gap-x-5 leading-none hover:text-tangerine transition-colors""
+        title="Schreiben Sie uns">
+        {{ partial:icons/envelope class="h-10 w-auto "}}
+        {{ contact_information:email }}
+      </a>
+    {{ /partial:layout/inner }}
+  </div>
   {{ partial:layout/inner class="h-[inherit] flex items-center relative" }}
     <a href="/" title="Startseite">
       {{ partial:icons/logo class="h-39 xl:h-53 w-auto" }}
@@ -6,7 +36,5 @@
     {{ partial:menu/mobile/button class="lg:hidden" }}
     {{ partial:menu/desktop/wrapper class="hidden lg:block" }}
   {{ /partial:layout/inner }}
-
   {{ partial:menu/mobile/wrapper class="lg:hidden" }}
-
 </header>

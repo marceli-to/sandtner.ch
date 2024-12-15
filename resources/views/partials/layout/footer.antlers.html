@@ -1,9 +1,7 @@
 <footer class="theme-white border-b-[6px] border-b-tangerine">
 
   {{ if partners }}
-
     {{ partial:components/misc/partners }}
-    
   {{ /if }}
 
   {{ partial:layout/inner class="py-20 lg:py-30" }}
@@ -16,14 +14,15 @@
 
         <div class="lg:ml-80 leading-[1.5]">
 
-          {{ if contact_information:address }}
+          {{ if contact_information:street || contact_information:location }}
             <address class="not-italic">
               {{ if contact_information:google_maps_url }}
-                <a href="{{ contact_information:address }}" 
+                <a href="{{ contact_information:google_maps_url }}" 
                   target="_blank" 
                   title="Auf Google Maps anzeigen"
                   class="block hover:underline underline-offset-4">
-                  {{ contact_information:address | nl2br }}
+                  {{ contact_information:street }}<br>
+                  {{ contact_information:location }}
                 </a>
               {{ /if }}
             </address>
@@ -71,16 +70,15 @@
 
       </div>
 
-      <div class="sm:col-span-3 lg:col-span-2">
-        
+      <div class="sm:col-span-3 lg:col-span-2  lg:flex lg:items-end">
+        <div>
         {{ partial:components/headings/h3 class="font-extrabold uppercase"  }}
           Öffnungszeiten
         {{ /partial:components/headings/h3 }}
-
         {{ if opening_hours }}
           {{ opening_hours:opening_hours }}
         {{ /if }}
-
+        </div>
       </div>
 
       <div class="sm:col-span-6 lg:col-span-2 lg:flex lg:items-end">

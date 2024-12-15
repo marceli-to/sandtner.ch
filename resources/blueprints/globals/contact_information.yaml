@@ -10,15 +10,15 @@ tabs:
               type: text
               display: Name
           -
-            handle: byline
+            handle: street
             field:
               type: text
-              display: Byline
+              display: Strasse
           -
-            handle: address
+            handle: location
             field:
-              type: textarea
-              display: Adresse
+              type: text
+              display: PLZ/Ort
           -
             handle: phone
             field:
