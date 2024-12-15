@@ -1,24 +1,9 @@
-<li class="">
+<li>
   <a 
     href="{{ url }}" 
-    class="{{ is_current || is_parent ? 'font-calibre-semi font-semibold' : '' }}"
+    class="{{ is_current || is_parent ? '' : '' }}"
     target="{{ is_external ? '_blank' : '_self' }}"
     title="{{ title }}">
     {{ title }}
   </a>
-  {{ if children }}
-    <ul>
-      {{ children }}
-        <li>
-          <a 
-            href="{{ url }}" 
-            class="{{ is_current || is_parent ? '' : '' }}"
-            target="{{ is_external ? '_blank' : '_self' }}"
-            title="{{ title }}">
-            {{ title }}
-          </a>
-        </li>
-      {{ /children }}
-    </ul>
-  {{ /if }}
 </li>

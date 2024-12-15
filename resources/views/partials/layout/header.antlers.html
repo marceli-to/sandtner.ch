@@ -1,4 +1,4 @@
-<header class="{{ class }} sticky z-90 top-0 w-full">
+<header class="bg-graphite sticky z-90 top-0 w-full {{ class }}">
   <div class="bg-white w-full">
     {{ partial:layout/inner class="hidden md:flex md:gap-x-20 md:h-38" }}
       <a 
@@ -29,12 +29,12 @@
       </a>
     {{ /partial:layout/inner }}
   </div>
-  {{ partial:layout/inner class="h-[inherit] flex items-center relative" }}
+  {{ partial:layout/inner class="flex justify-between items-end relative" }}
     <a href="/" title="Startseite">
-      {{ partial:icons/logo class="h-39 xl:h-53 w-auto" }}
+      {{ partial:icons/logo class="md:h-70 w-auto" class_byline="fill-white" }}
     </a>
-    {{ partial:menu/mobile/button class="lg:hidden" }}
-    {{ partial:menu/desktop/wrapper class="hidden lg:block" }}
+    {{ partial:menu/mobile/button class="md:hidden" }}
+    {{ partial:menu/desktop/wrapper class="hidden md:block" }}
   {{ /partial:layout/inner }}
-  {{ partial:menu/mobile/wrapper class="lg:hidden" }}
+  {{ partial:menu/mobile/wrapper class="md:hidden" }}
 </header>
