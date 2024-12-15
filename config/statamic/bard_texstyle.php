@@ -33,15 +33,15 @@ return [
           'cp_badge' => false,
         ],
 
-        // 'brand' => [
-        //     'type' => 'span',
-        //     'name' => 'Brand Text',
-        //     'ident' => 'B',
-        //     'icon' => null,
-        //     'class' => 'brand-text',
-        //     'cp_css' => 'color: #ff269e; font-weight: 700',
-        //     'cp_badge' => false,
-        // ],
+        'hightlight' => [
+            'type' => 'span',
+            'name' => 'Highlight',
+            'ident' => 'H',
+            'icon' => null,
+            'class' => 'text-tangerine',
+            'cp_css' => 'color: #F18700',
+            'cp_badge' => false,
+        ],
 
         // 'action' => [
         //     'type' => 'link',

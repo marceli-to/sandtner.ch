@@ -7,5 +7,13 @@ tabs:
           -
             handle: opening_hours
             field:
-              type: textarea
+              buttons:
+                - bold
+                - unorderedlist
+                - removeformat
+                - anchor
+                - hightlight
+              remove_empty_nodes: true
+              type: bard
               display: Öffnungszeiten
+              toolbar_mode: floating

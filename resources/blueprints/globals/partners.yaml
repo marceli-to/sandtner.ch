@@ -1,0 +1,36 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: partner
+            field:
+              type: replicator
+              display: Partner
+              collapse: true
+              sets:
+                partner:
+                  display: Partner
+                  instructions: 'Partner hinzufügen'
+                  icon: media-image-picture-orientation
+                  sets:
+                    partner:
+                      display: Partner
+                      instructions: 'Partner hinzufügen'
+                      icon: media-image-picture-orientation
+                      fields:
+                        -
+                          handle: logo
+                          field:
+                            max_files: 1
+                            container: assets
+                            type: assets
+                            display: Logo
+                            folder: partners
+                        -
+                          handle: url
+                          field:
+                            type: link
+                            display: Webseite

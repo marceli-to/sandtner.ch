@@ -1,12 +1,12 @@
 title: Settings
 fields:
   -
-    import: theme_selector
-  -
     handle: debug
     field:
       type: toggle
       display: Debug
+  -
+    import: theme_selector
   -
     handle: template
     field:

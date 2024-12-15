@@ -1,5 +1,109 @@
-<footer class="theme-white">
-  {{ partial:layout/inner }}
+<footer class="theme-white border-b-[6px] border-b-tangerine">
+
+  {{ if partners }}
+
+    {{ partial:components/misc/partners }}
+    
+  {{ /if }}
+
+  {{ partial:layout/inner class="py-20 lg:py-30" }}
+
+    {{ partial:layout/grid class="flex flex-col gap-y-20" }}
+
+      <div class="sm:col-span-3 lg:col-span-2">
+
+        {{ partial:icons/logo class="w-full h-auto max-w-[250px] mb-15" }}
+
+        <div class="lg:ml-80 leading-[1.5]">
+
+          {{ if contact_information:address }}
+            <address class="not-italic">
+              {{ if contact_information:google_maps_url }}
+                <a href="{{ contact_information:address }}" 
+                  target="_blank" 
+                  title="Auf Google Maps anzeigen"
+                  class="block hover:underline underline-offset-4">
+                  {{ contact_information:address | nl2br }}
+                </a>
+              {{ /if }}
+            </address>
+          {{ /if }}
+          
+          {{ if contact_information:phone }}
+            <a href="tel:{{ contact_information:phone }}" 
+              title="Rufen Sie uns an!" 
+              class="block hover:underline underline-offset-4"
+              target="_blank">
+              Tel. {{ contact_information:phone }}
+            </a>
+          {{ /if }}
+
+          {{ if contact_information:email }}
+            <a href="mailto:{{ contact_information:email }}" 
+              title="Schreiben Sie uns!" 
+              class="block hover:underline underline-offset-4"
+              target="_blank">
+              {{ contact_information:email }}
+            </a>
+          {{ /if }}
+            
+          {{ if social_media_accounts:facebook || social_media_accounts:instagram }}
+            <div class="flex gap-x-10 mt-10">
+              {{ if social_media_accounts:facebook }}
+                <a href="{{ social_media_accounts:facebook }}" 
+                  title="Facebook" 
+                  class="block hover:underline underline-offset-4"
+                  target="_blank">
+                  {{ partial:icons/facebook class="w-18 h-auto" }}
+                </a>
+              {{ /if }}
+              {{ if social_media_accounts:instagram }}
+              <a href="{{ social_media_accounts:instagram }}" 
+                title="Instagram" 
+                class="block hover:underline underline-offset-4"
+                target="_blank">
+                {{ partial:icons/instagram class="w-18 h-auto" }}
+              </a>
+            {{ /if }}
+            </div>
+          {{ /if }}
+        </div>
+
+      </div>
+
+      <div class="sm:col-span-3 lg:col-span-2">
+        
+        {{ partial:components/headings/h3 class="font-extrabold uppercase"  }}
+          Öffnungszeiten
+        {{ /partial:components/headings/h3 }}
+
+        {{ if opening_hours }}
+          {{ opening_hours:opening_hours }}
+        {{ /if }}
+
+      </div>
+
+      <div class="sm:col-span-6 lg:col-span-2 lg:flex lg:items-end">
+
+        <nav>
+          <ul class="flex lg:flex-col  gap-x-15">
+            {{ nav:footer }}
+              <li>
+                <a 
+                  href="{{ url }}" 
+                  title="{{ title }}" 
+                  target="{{ is_external ? '_blank' : '_self' }}"
+                  class="block uppercase hover:underline underline-offset-4">
+                  {{ title }}
+                </a>
+              </li>
+            {{ /nav:footer }}
+          </ul>
+        </nav>
+
+      </div>
+
+    {{ /partial:layout/grid }}
 
   {{ /partial:layout/inner }}
 </footer>

@@ -33,12 +33,10 @@ export default {
       },
 
       fontSize: {
-        'sm': '1rem',       // 16px
-        'base': '1.125rem', // 18px
-        'md': '1.625rem',   // 26px
-        'lg': '3.125rem',   // 50px
-        'xl': '3.4375rem',  // 55px
-        '2xl': '4.375rem',  // 70px
+        'sm': '0.875rem', // 14px
+        'md': '1.125rem', // 18px
+        'lg': '1.5rem', // 24px
+        'xl': '1.75rem', // 28px
       },
       
       zIndex: {
