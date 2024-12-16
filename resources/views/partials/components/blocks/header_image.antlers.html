@@ -1,4 +1,5 @@
 {{ if image }}
+<figure class="relative">
   <picture>
     <source media="(min-width: 1280px)" srcset="{{ glide:image preset="2xl-webp" }}" type="image/webp">
     <source media="(min-width: 1280px)" srcset="{{ glide:image preset="2xl" }}" type="image/jpeg">
@@ -15,4 +16,24 @@
       width="{{ image:width }}"
       class="block w-full h-auto aspect-[16/7] md:aspect-[16/5] object-cover">
   </picture>
+  {{ if has_cta }}
+    <div class="w-full absolute bottom-0 hidden md:block">
+      {{ partial:layout/inner }}
+        {{ partial:layout/grid class="bg-tangerine/60 py-25 text-white" }}
+        <div class="md:col-span-2 md:pl-20 lg:pl-30">
+          {{ partial:components/headings/h2 class="after:bg-white" }}
+            <span class="font-light">Sie haben einen</span><br>Schadenfall?
+          {{ /partial:components/headings/h2 }}
+        </div>
+        <div class="md:col-span-2">
+          Nutzen Sie unser <strong>Onlineformular für die Schadenmeldung</strong> oder kontaktieren Sie uns gleich per Telefon <strong>044 950 30 62</strong>.
+        </div>
+        <div class="md:col-span-2 md:flex md:items-end">
+          {{ partial:components/buttons/secondary label="Schadenmeldung" url="/schadenmeldung" }}
+        </div>
+        {{ /partial:layout/grid }}
+      {{ /partial:layout/inner }}
+    </div>
+  {{ /if }}
+</figure>
 {{ /if }}

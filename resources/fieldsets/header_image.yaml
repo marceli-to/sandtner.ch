@@ -8,3 +8,8 @@ fields:
       folder: header
       type: assets
       display: Bild
+  -
+    handle: has_cta
+    field:
+      type: toggle
+      display: 'CTA Schadenfall'

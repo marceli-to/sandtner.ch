@@ -19,7 +19,7 @@ export default {
       },
       
       maxWidth: {
-        'prose': '86ch'
+        'prose': '70ch'
       },
 
       colors: {
@@ -35,7 +35,8 @@ export default {
       fontSize: {
         'sm': '0.875rem', // 14px
         'md': '1.125rem', // 18px
-        'lg': '1.5rem', // 24px
+        // lg, 23px to rem
+        'lg': '1.4375rem',
         'xl': '1.75rem', // 28px
       },
 

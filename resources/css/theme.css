@@ -14,3 +14,17 @@
   @apply bg-white;
 }
 
+
+h1.theme-white,
+h2.theme-white {
+  @apply text-tangerine;
+}
+
+h2.theme-white:after {
+  @apply bg-graphite
+}
+
+.byline.theme-white {
+  @apply text-graphite
+}
+

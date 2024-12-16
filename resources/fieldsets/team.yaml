@@ -1,0 +1,46 @@
+title: Team
+fields:
+  -
+    import: theme_selector
+  -
+    handle: team_title
+    field:
+      type: textarea
+      display: Titel
+  -
+    handle: team_subtitle
+    field:
+      type: textarea
+      display: Subtitel
+  -
+    handle: team_member
+    field:
+      type: replicator
+      display: Mitarbeiter
+      sets:
+        neue_setgruppe:
+          display: 'Neue Setgruppe'
+          sets:
+            team_member:
+              display: Mitarbeiter
+              instructions: 'Mitarbeiter hinzufügen'
+              icon: text-formatting-image-top
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Bild
+                    folder: team
+                -
+                  handle: name
+                  field:
+                    type: text
+                    display: Name
+                -
+                  handle: position
+                  field:
+                    type: textarea
+                    display: Position

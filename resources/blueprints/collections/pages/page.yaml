@@ -34,6 +34,13 @@ tabs:
                       fields:
                         -
                           import: header_image
+                    page_section:
+                      display: Sektion
+                      instructions: 'Sektion hinzufügen.'
+                      icon: dashboard-layout
+                      fields:
+                        -
+                          import: page_section
                 special_elements:
                   display: Spezialelemente
                   icon: addon-boxes-stack

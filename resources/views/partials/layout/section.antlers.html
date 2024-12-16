@@ -1,0 +1,23 @@
+<div class="{{ theme }}">
+  {{ partial:layout/inner class="py-30 md:py-60" }}
+    {{ partial:layout/grid }}
+      <div class="sm:col-span-full md:col-span-2">
+        <div class="byline font-bold uppercase {{ theme }}">{{ section_subtitle | nl2br }}</div>
+        {{ partial:components/headings/h2 class="{{ theme }} " }}
+          {{ section_title | nl2br }}
+        {{ /partial:components/headings/h2 }}
+      </div>
+
+      {{ if blocks }}
+        {{ blocks }}
+          {{ if type == 'text-one-column' }}
+            <div class="sm:col-span-full md:col-span-4 md:pt-22 max-w-prose">
+              {{ text }}
+            </div>
+          {{ /if }}
+        {{ /blocks }}
+      {{ /if }}
+
+    {{ /partial:layout/grid }}
+  {{ /partial:layout/inner }}
+</div>

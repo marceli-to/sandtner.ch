@@ -1,10 +1,10 @@
-<header class="bg-graphite fixed md:sticky left-0 top-0 z-90 h-70 md:h-108 w-full {{ class }}">
+<header class="bg-graphite fixed lg:sticky left-0 top-0 z-90 h-70 lg:h-108 w-full {{ class }}">
   <div class="bg-white w-full">
-    {{ partial:layout/inner class="hidden md:flex md:gap-x-20 md:h-38" }}
+    {{ partial:layout/inner class="hidden lg:flex md:gap-x-20 md:h-38" }}
       <a 
         href="{{ contact_information:google_maps_url }}" 
         target="_blank"
-        class="md:h-[inherit] flex items-center gap-x-5 leading-none hover:text-tangerine transition-colors"
+        class="flex items-center gap-x-5 leading-none hover:text-tangerine transition-colors"
         title="Finden Sie uns auf Google Maps">
         {{ partial:icons/marker class="h-15 w-auto "}}
         {{ contact_information:street }}
@@ -14,7 +14,7 @@
       <a 
         href="{{ contact_information:phone }}"
         target="_blank"
-        class="md:h-[inherit] flex items-center gap-x-5 leading-none hover:text-tangerine transition-colors""
+        class="flex items-center gap-x-5 leading-none hover:text-tangerine transition-colors""
         title="Rufen Sie uns an">
         {{ partial:icons/phone class="h-15 w-auto "}}
         {{ contact_information:phone }}
@@ -22,7 +22,7 @@
       <a 
         href="{{ contact_information:email }}"
         target="_blank"
-        class="md:h-[inherit] flex items-center gap-x-5 leading-none hover:text-tangerine transition-colors""
+        class="flex items-center gap-x-5 leading-none hover:text-tangerine transition-colors""
         title="Schreiben Sie uns">
         {{ partial:icons/envelope class="h-10 w-auto "}}
         {{ contact_information:email }}
@@ -31,11 +31,11 @@
   </div>
   {{ partial:layout/inner class="flex justify-between items-end relative" }}
     <a href="/" title="Startseite">
-      {{ partial:icons/logo class="md:h-70 w-auto" class_byline="fill-white" }}
+      {{ partial:icons/logo class="lg:h-70 w-auto" class_byline="fill-white" }}
     </a>
-    {{ partial:menu/mobile/button class="md:hidden" }}
-    {{ partial:menu/desktop/wrapper class="hidden md:block" }}
+    {{ partial:menu/mobile/button class="lg:hidden" }}
+    {{ partial:menu/desktop/wrapper class="hidden lg:block" }}
   {{ /partial:layout/inner }}
 </header>
-{{ partial:menu/mobile/wrapper class="md:hidden" }}
+{{ partial:menu/mobile/wrapper class="lg:hidden" }}
 

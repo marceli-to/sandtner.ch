@@ -10,6 +10,7 @@
 [x-cloak] { display: none !important; }
 
 main p:not(:last-child) {
+  @apply mb-20 md:mb-25
 }
 
 main a {
@@ -27,6 +28,7 @@ main ul p {
 }
 
 b, strong {
+  @apply font-bold
 }
 
 table td {
