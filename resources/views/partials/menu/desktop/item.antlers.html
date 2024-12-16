@@ -1,7 +1,7 @@
 <li>
   <a 
     href="{{ url }}" 
-    class="{{ is_current || is_parent ? '' : '' }}"
+    class="hover:underline underline-offset-9 decoration-4 decoration-tangerine {{ is_current || is_parent ? 'underline' : 'no-underline' }}"
     target="{{ is_external ? '_blank' : '_self' }}"
     title="{{ title }}">
     {{ title }}

@@ -1,4 +1,4 @@
-<header class="bg-graphite sticky z-90 top-0 w-full {{ class }}">
+<header class="bg-graphite fixed md:sticky left-0 top-0 z-90 h-70 md:h-108 w-full {{ class }}">
   <div class="bg-white w-full">
     {{ partial:layout/inner class="hidden md:flex md:gap-x-20 md:h-38" }}
       <a 
@@ -36,5 +36,6 @@
     {{ partial:menu/mobile/button class="md:hidden" }}
     {{ partial:menu/desktop/wrapper class="hidden md:block" }}
   {{ /partial:layout/inner }}
-  {{ partial:menu/mobile/wrapper class="md:hidden" }}
 </header>
+{{ partial:menu/mobile/wrapper class="md:hidden" }}
+

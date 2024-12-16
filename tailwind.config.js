@@ -38,6 +38,23 @@ export default {
         'lg': '1.5rem', // 24px
         'xl': '1.75rem', // 28px
       },
+
+      borderWidth: {
+        '6': '6px',
+      },
+
+      textDecorationThickness: {
+        6: '6px',
+      },
+
+      textUnderlineOffset: {
+        5: '5px',
+        6: '6px',
+        7: '7px',
+        8: '8px',
+        9: '9px',
+        10: '10px',
+      },
       
       zIndex: {
         '60': 60,
