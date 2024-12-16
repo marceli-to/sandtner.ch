@@ -41,6 +41,20 @@ tabs:
                       fields:
                         -
                           import: page_section
+                    team:
+                      display: Team
+                      instructions: 'Team hinzufügen.'
+                      icon: dashboard-layout
+                      fields:
+                        -
+                          import: team
+                    history:
+                      display: Geschichte
+                      instructions: 'Geschichte hinzufügen.'
+                      icon: dashboard-layout
+                      fields:
+                        -
+                          import: history
                 special_elements:
                   display: Spezialelemente
                   icon: addon-boxes-stack

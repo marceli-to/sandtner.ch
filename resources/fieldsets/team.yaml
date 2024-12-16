@@ -3,20 +3,26 @@ fields:
   -
     import: theme_selector
   -
-    handle: team_title
-    field:
-      type: textarea
-      display: Titel
-  -
     handle: team_subtitle
     field:
       type: textarea
       display: Subtitel
   -
+    handle: team_title
+    field:
+      type: textarea
+      display: Titel
+  -
+    handle: text
+    field:
+      type: textarea
+      display: Text
+  -
     handle: team_member
     field:
       type: replicator
       display: Mitarbeiter
+      collapse: true
       sets:
         neue_setgruppe:
           display: 'Neue Setgruppe'

@@ -1,5 +1,5 @@
 .theme-tangerine {
-  @apply bg-tangerine;
+  @apply bg-tangerine text-white;
 }
 
 .theme-silver {
@@ -7,7 +7,7 @@
 }
 
 .theme-graphite {
-  @apply bg-graphite;
+  @apply bg-graphite ;
 }
 
 .theme-white {
@@ -27,4 +27,45 @@ h2.theme-white:after {
 .byline.theme-white {
   @apply text-graphite
 }
+
+h1.theme-silver,
+h2.theme-silver {
+  @apply text-graphite;
+}
+
+h2.theme-silver:after {
+  @apply bg-graphite
+}
+
+.byline.theme-silver {
+  @apply text-tangerine
+}
+
+
+h1.theme-graphite,
+h2.theme-graphite {
+  @apply text-white;
+}
+
+h2.theme-graphite:after {
+  @apply !bg-white
+}
+
+.byline.theme-graphite {
+  @apply text-tangerine
+}
+
+h1.theme-tangerine,
+h2.theme-tangerine {
+  @apply text-white;
+}
+
+h2.theme-tangerine:after {
+  @apply !bg-white
+}
+
+.byline.theme-tangerine {
+  @apply text-graphite
+}
+
 

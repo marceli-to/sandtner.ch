@@ -1,7 +1,13 @@
-{{ editor }}
+{{ content }}
 
   {{ if type == 'text' }}
     {{ text }}
   {{ /if }}
 
-{{ /editor }}
+  {{ if type == 'button' }}
+    <div>
+      {{ partial:components/buttons/primary :label="label" :url="url" }}
+    </div>
+  {{ /if }}
+
+{{ /content }}

@@ -1,0 +1,39 @@
+<div class="{{ theme }}">
+
+  {{ partial:layout/inner class="py-30 md:py-60" }}
+
+    {{ partial:layout/grid }}
+
+      <div class="sm:col-span-full md:col-span-2">
+        
+        {{ partial:components/headings/byline }}
+          {{ team_subtitle | nl2br }}
+        {{ /partial:components/headings/byline }}
+
+        {{ partial:components/headings/h2 class="{{ theme }}" has_after="true" }}
+          {{ team_title | nl2br }}
+        {{ /partial:components/headings/h2 }}
+        
+      </div>
+
+      <div class="sm:col-span-full md:col-span-4 md:pt-22 max-w-prose">
+        {{ text | nl2br }}
+      </div>
+
+    {{ /partial:layout/grid }}
+
+    {{ partial:layout/grid class="flex flex-col space-y-20 sm:space-y-0 mt-20 md:mt-40" }}
+      {{ team_member }}
+        <div class="sm:col-span-2 lg:col-span-1">
+          {{ partial:media/image class="w-full h-auto" :image="image" preset="focal-square" sizes="['md', 'lg', 'xl']" }}
+          <h3 class="font-extrabold text-tangerine mt-5 lg:mt-10">{{ name }}</h3>
+          {{ if position }}
+            <div>{{ position | nl2br }}</div>
+          {{ /if }}
+        </div>
+      {{ /team_member }}
+    {{ /partial:layout/grid }}
+
+  {{ /partial:layout/inner }}
+
+</div>

@@ -3,15 +3,15 @@ fields:
   -
     import: theme_selector
   -
-    handle: team_title
-    field:
-      type: text
-      display: Titel
-  -
-    handle: team_subtitle
+    handle: video_subtitle
     field:
       type: text
       display: Subtitel
+  -
+    handle: video_title
+    field:
+      type: text
+      display: Titel
   -
     handle: video_file
     field:

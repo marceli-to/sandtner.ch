@@ -1,0 +1,34 @@
+<div class="{{ theme }}">
+
+  {{ partial:layout/inner class="py-30 md:py-60" }}
+
+    {{ partial:layout/grid }}
+
+      <div class="sm:col-span-full md:col-span-2">
+        
+        {{ partial:components/headings/byline }}
+          {{ history_subtitle | nl2br }}
+        {{ /partial:components/headings/byline }}
+
+        {{ partial:components/headings/h2 class="{{ theme }}" }}
+          {{ history_title | nl2br }}
+        {{ /partial:components/headings/h2 }}
+        
+      </div>
+
+      <div class="sm:col-span-full md:col-span-4 pt-16">
+        {{ history_items }}
+          <div>
+            <h3 class="font-extrabold text-lg lg:text-xl">
+              {{ year }}
+            </h3>
+          </div>
+        {{ /history_items }}
+      </div>
+
+
+    {{ /partial:layout/grid }}
+
+  {{ /partial:layout/inner }}
+
+</div>

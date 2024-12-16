@@ -37,4 +37,9 @@ table td {
 
 /* Headings */
 h1, h2, h3 {
+
+}
+
+H3 {
+  @apply font-bold uppercase
 }

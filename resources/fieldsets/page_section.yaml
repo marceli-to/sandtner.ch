@@ -3,15 +3,15 @@ fields:
   -
     import: theme_selector
   -
-    handle: section_title
-    field:
-      type: textarea
-      display: Titel
-  -
     handle: section_subtitle
     field:
       type: textarea
       display: Subtitel
+  -
+    handle: section_title
+    field:
+      type: textarea
+      display: Titel
   -
     handle: blocks
     field:
@@ -44,6 +44,19 @@ fields:
                     container: assets
                     type: bard
                     display: Text
+                    sets:
+                      elements:
+                        display: Elemente
+                        instructions: 'Elemente hinzufügen'
+                        icon: addon-boxes-stack
+                        sets:
+                          button:
+                            display: Button
+                            instructions: 'Button hinzufügen'
+                            icon: link
+                            fields:
+                              -
+                                import: button
             text-two-columns:
               display: 'Editor, 2-spaltig'
               instructions: 'Editor, 2-spaltig hinzufügen'
@@ -68,6 +81,19 @@ fields:
                     type: bard
                     display: 'Text (Links)'
                     width: 50
+                    sets:
+                      elements:
+                        display: Elemente
+                        instructions: 'Elemente hinzufügen'
+                        icon: addon-boxes-stack
+                        sets:
+                          button:
+                            display: Button
+                            instructions: 'Button hinzufügen'
+                            icon: link
+                            fields:
+                              -
+                                import: button
                 -
                   handle: text_right
                   field:
@@ -87,3 +113,16 @@ fields:
                     type: bard
                     display: 'Text (Rechts)'
                     width: 50
+                    sets:
+                      elements:
+                        display: Elemente
+                        instructions: 'Elemente hinzufügen'
+                        icon: addon-boxes-stack
+                        sets:
+                          button:
+                            display: Button
+                            instructions: 'Button hinzufügen'
+                            icon: link
+                            fields:
+                              -
+                                import: button

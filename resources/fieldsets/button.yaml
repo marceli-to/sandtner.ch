@@ -1,0 +1,15 @@
+title: Button
+fields:
+  -
+    handle: url
+    field:
+      collections:
+        - pages
+      container: assets
+      type: link
+      display: Link
+  -
+    handle: label
+    field:
+      type: text
+      display: Label

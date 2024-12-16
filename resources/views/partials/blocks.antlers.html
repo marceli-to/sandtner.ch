@@ -21,3 +21,11 @@
 {{ if type == 'page_section' }}
   {{ partial:layout/section }}
 {{ /if }}
+
+{{ if type == 'team' }}
+  {{ partial:components/blocks/team }}
+{{ /if }}
+
+{{ if type == 'history' }}
+  {{ partial:components/blocks/history }}
+{{ /if }}
