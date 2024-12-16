@@ -27,9 +27,13 @@ tabs:
                   display: Hauptelemente
                   icon: addon-boxes-stack
                   sets:
-                    neues_set:
-                      display: 'Neues Set'
-                      fields: {  }
+                    header_image:
+                      display: Headerbild
+                      instructions: 'Headerbild hinzufügen'
+                      icon: media-image-picture-orientation
+                      fields:
+                        -
+                          import: header_image
                 special_elements:
                   display: Spezialelemente
                   icon: addon-boxes-stack

@@ -10,6 +10,10 @@
   {{ partial:components/blocks/anchor }}
 {{ /if }}
 
+{{ if type == 'header_image' }}
+  {{ partial:components/blocks/header_image }}
+{{ /if }}
+
 {{ if type == 'single_image' }}
   {{ partial:components/blocks/single_image }}
 {{ /if }}

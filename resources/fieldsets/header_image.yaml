@@ -1,0 +1,10 @@
+title: Headerbild
+fields:
+  -
+    handle: image
+    field:
+      max_files: 1
+      container: assets
+      folder: header
+      type: assets
+      display: Bild
