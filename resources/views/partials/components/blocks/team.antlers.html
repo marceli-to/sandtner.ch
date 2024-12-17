@@ -16,7 +16,7 @@
         
       </div>
 
-      <div class="sm:col-span-full md:col-span-4 md:pt-22 max-w-prose">
+      <div class="sm:col-span-full md:col-span-4 md:pt-22 max-w-prose text-white">
         {{ text | nl2br }}
       </div>
 
@@ -24,7 +24,7 @@
 
     {{ partial:layout/grid class="flex flex-col space-y-20 sm:space-y-0 mt-20 md:mt-40" }}
       {{ team_member }}
-        <div class="sm:col-span-2 lg:col-span-1">
+        <div class="sm:col-span-2 lg:col-span-1 text-white">
           {{ partial:media/image class="w-full h-auto" :image="image" preset="focal-square" sizes="['md', 'lg', 'xl']" }}
           <h3 class="font-extrabold text-tangerine mt-5 lg:mt-10">{{ name }}</h3>
           {{ if position }}

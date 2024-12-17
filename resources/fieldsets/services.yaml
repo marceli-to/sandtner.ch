@@ -1,0 +1,81 @@
+title: Leistungen
+fields:
+  -
+    import: theme_selector
+  -
+    handle: service_subtitle
+    field:
+      type: textarea
+      display: Subtitel
+  -
+    handle: service_title
+    field:
+      type: textarea
+      display: Titel
+  -
+    handle: service_items
+    field:
+      type: replicator
+      display: Leistungen
+      collapse: true
+      sets:
+        neue_setgruppe:
+          display: 'Neue Setgruppe'
+          sets:
+            service_member:
+              display: Leistung
+              instructions: 'Leistung hinzufügen'
+              icon: text-formatting-image-top
+              fields:
+                -
+                  handle: item_icon
+                  field:
+                    options:
+                      -
+                        key: aufbereiten-innen-aussen
+                        value: 'Autoaufbereitung Innen und Aussen'
+                      -
+                        key: auto-fahrzeug-restaurieren
+                        value: 'Auto- und Fahrzeug-Restaurationen'
+                      -
+                        key: blech-carrosserie-schaeden
+                        value: 'Blech- und Carrosserieschäden'
+                      -
+                        key: hagel-parkschaden
+                        value: 'Hagel- und Parkschäden'
+                      -
+                        key: lackieren
+                        value: 'Wir lackieren alles'
+                      -
+                        key: reparaturen-schweissen
+                        value: 'Kunstoffreparaturen und Schweissen'
+                      -
+                        key: scheiben-ersatz-reparaturen
+                        value: 'Scheibenersatz- und Reparaturen'
+                      -
+                        key: spenglerei-lackiererei
+                        value: "Carrosserie-\LSpenglerei und Autolackiererei"
+                    type: select
+                    display: Icon
+                -
+                  handle: item_title
+                  field:
+                    type: textarea
+                    display: Titel
+                -
+                  handle: item_text
+                  field:
+                    buttons:
+                      - bold
+                      - unorderedlist
+                      - removeformat
+                      - anchor
+                      - hightlight
+                    toolbar_mode: floating
+                    remove_empty_nodes: true
+                    link_collections:
+                      - pages
+                    container: assets
+                    collapse: true
+                    type: bard
+                    display: Text

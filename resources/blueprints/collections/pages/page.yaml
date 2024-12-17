@@ -48,6 +48,13 @@ tabs:
                       fields:
                         -
                           import: team
+                    services:
+                      display: Leistungen
+                      instructions: 'Leistungen hinzufügen.'
+                      icon: dashboard-layout
+                      fields:
+                        -
+                          import: services
                     history:
                       display: Geschichte
                       instructions: 'Geschichte hinzufügen.'
@@ -73,6 +80,13 @@ tabs:
                       fields:
                         -
                           import: video
+                    street_view:
+                      display: 'Google Street View'
+                      instructions: 'Google Street View hinzufügen'
+                      icon: media-webcam-video
+                      fields:
+                        -
+                          import: street_view
                     anchor:
                       display: Anker
                       instructions: 'Ankerpunkt für Inhalte hinzufügen'

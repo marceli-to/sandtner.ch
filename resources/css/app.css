@@ -17,10 +17,18 @@ main a {
 }
 
 main ul {
-  @apply flex flex-col space-y-5 lg:space-y-10
 }
 
-main ul:not(:last-child) {
+main ul {
+  @apply list-disc
+}
+
+main ul li {
+  @apply list-item ml-22 pl-0
+}
+
+main ul li::marker {
+  @apply block w-4
 }
 
 main ul p {

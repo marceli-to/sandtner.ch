@@ -1,0 +1,19 @@
+title: 'Google Street View'
+fields:
+  -
+    import: theme_selector
+  -
+    handle: street_view_subtitle
+    field:
+      type: text
+      display: Subtitel
+  -
+    handle: street_view_title
+    field:
+      type: text
+      display: Titel
+  -
+    handle: code
+    field:
+      type: textarea
+      display: Code
