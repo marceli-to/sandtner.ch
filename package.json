@@ -19,6 +19,7 @@
   "dependencies": {
     "@vitejs/plugin-vue": "^4.6.2",
     "alpinejs": "^3.13.8",
-    "swiper": "^11.1.15"
+    "swiper": "^11.1.15",
+    "@fancyapps/ui": "^5.0.22"
   }
 }

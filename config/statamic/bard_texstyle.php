@@ -43,6 +43,16 @@ return [
             'cp_badge' => false,
         ],
 
+        'slash_list' => [
+          'type' => 'unordered_list',
+          'name' => 'Slashed List',
+          'ident' => '/',
+          'icon' => null,
+          'class' => 'slash',
+          'cp_css' => '',
+          'cp_badge' => false,
+      ],
+
         // 'action' => [
         //     'type' => 'link',
         //     'name' => 'Action',

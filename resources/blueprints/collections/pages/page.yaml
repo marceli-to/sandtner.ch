@@ -62,6 +62,20 @@ tabs:
                       fields:
                         -
                           import: history
+                    gallery:
+                      display: Galerie
+                      instructions: 'Galerie hinzufügen.'
+                      icon: dashboard-layout
+                      fields:
+                        -
+                          import: gallery
+                    replacement_cars:
+                      display: Ersatzwagen
+                      instructions: 'Ersatzwagen hinzufügen.'
+                      icon: dashboard-layout
+                      fields:
+                        -
+                          import: replacement_cars
                 special_elements:
                   display: Spezialelemente
                   icon: addon-boxes-stack

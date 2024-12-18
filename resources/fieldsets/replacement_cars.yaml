@@ -1,0 +1,66 @@
+title: Ersatzwagen
+fields:
+  -
+    import: theme_selector
+  -
+    handle: replacement_cars_subtitle
+    field:
+      type: textarea
+      display: Subtitel
+  -
+    handle: replacement_cars_title
+    field:
+      type: textarea
+      display: Titel
+  -
+    handle: text
+    field:
+      type: textarea
+      display: Text
+  -
+    handle: replacement_cars
+    field:
+      type: replicator
+      display: Ersatzwagen
+      collapse: true
+      sets:
+        neue_setgruppe:
+          display: 'Neue Setgruppe'
+          sets:
+            team_member:
+              display: Ersatzwagen
+              instructions: 'Ersatzwagen hinzufügen'
+              icon: text-formatting-image-top
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Bild
+                    folder: ersatzwagen
+                -
+                  handle: replacement_car_title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: attributes
+                  field:
+                    type: replicator
+                    display: Attribute
+                    sets:
+                      neue_setgruppe:
+                        display: 'Neue Setgruppe'
+                        sets:
+                          attribute:
+                            display: Attribut
+                            instructions: 'Attribut hinzufügen'
+                            icon: text-formatting-initial-letter
+                            fields:
+                              -
+                                handle: attribute_text
+                                field:
+                                  type: text
+                                  display: Attribut

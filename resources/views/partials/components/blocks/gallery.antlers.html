@@ -1,0 +1,30 @@
+<div class="{{ theme }}">
+
+  {{ partial:layout/inner class="py-30 md:py-60" }}
+
+    {{ partial:layout/grid }}
+
+      <div class="sm:col-span-full md:col-span-2">
+
+        {{ partial:components/headings/h2 class="{{ theme }}" }}
+          {{ gallery_title | nl2br }}
+        {{ /partial:components/headings/h2 }}
+        
+      </div>
+
+
+    {{ /partial:layout/grid }}
+
+    {{ partial:layout/grid class="flex flex-col space-y-20 sm:space-y-0 mt-20 md:mt-40" }}
+      {{ images }}
+        <div class="sm:col-span-2 text-white">
+          <a data-fancybox href="{{ glide:image preset='xl' }}">
+            {{ partial:media/image class="w-full h-auto" :image="image" preset="focal-square" sizes="['md', 'lg', 'xl']" }}
+          </a>
+        </div>
+      {{ /images }}
+    {{ /partial:layout/grid }}
+
+  {{ /partial:layout/inner }}
+
+</div>

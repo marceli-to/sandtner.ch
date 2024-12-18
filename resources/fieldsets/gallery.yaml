@@ -1,0 +1,32 @@
+title: Galerie
+fields:
+  -
+    import: theme_selector
+  -
+    handle: gallery_title
+    field:
+      type: textarea
+      display: Titel
+  -
+    handle: images
+    field:
+      type: replicator
+      display: Bilder
+      collapse: true
+      sets:
+        neue_setgruppe:
+          display: 'Neue Setgruppe'
+          sets:
+            team_member:
+              display: Bild
+              instructions: 'Bild hinzufügen'
+              icon: text-formatting-image-top
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Bild
+                    folder: galerie

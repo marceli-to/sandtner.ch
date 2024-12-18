@@ -73,6 +73,7 @@ fields:
                       - anchor
                       - nobr
                       - hightlight
+                      - slash_list
                     toolbar_mode: floating
                     remove_empty_nodes: true
                     link_collections:
@@ -105,6 +106,7 @@ fields:
                       - anchor
                       - nobr
                       - hightlight
+                      - slash_list
                     toolbar_mode: floating
                     remove_empty_nodes: true
                     link_collections:

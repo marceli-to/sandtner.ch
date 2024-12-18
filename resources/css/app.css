@@ -1,5 +1,6 @@
 @import "typo/webfonts.css";
 @import "partials/forms.css";
+@import "vendor/fancybox.css";
 @import "vendor/swiper.css";
 @import "theme.css";
 
@@ -16,7 +17,8 @@ main p:not(:last-child) {
 main a {
 }
 
-main ul {
+main ul:not(:last-child) {
+  @apply mb-20 md:mb-25
 }
 
 main ul {
@@ -33,6 +35,22 @@ main ul li::marker {
 
 main ul p {
   @apply inline
+}
+
+main ul.slash {
+  @apply list-none ml-0
+}
+
+main ul.slash li {
+  @apply ml-0 relative pl-10
+}
+
+main ul.slash li::marker {
+  @apply hidden
+}
+
+main ul.slash li:before {
+  @apply content-['/'] text-tangerine font-bold block absolute left-0
 }
 
 b, strong {
