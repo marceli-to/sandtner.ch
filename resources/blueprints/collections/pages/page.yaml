@@ -108,6 +108,13 @@ tabs:
                       fields:
                         -
                           import: anchor
+                    contact:
+                      display: Kontakt
+                      instructions: 'Kontakt hinzufügen.'
+                      icon: dashboard-layout
+                      fields:
+                        -
+                          import: contact
   seo:
     display: SEO
     sections:

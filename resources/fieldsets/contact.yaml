@@ -1,0 +1,14 @@
+title: Kontakt
+fields:
+  -
+    import: theme_selector
+  -
+    handle: contact_title
+    field:
+      type: textarea
+      display: Titel
+  -
+    handle: text
+    field:
+      type: textarea
+      display: Text
