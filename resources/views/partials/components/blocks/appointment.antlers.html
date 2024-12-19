@@ -1,0 +1,26 @@
+<div class="{{ theme }}">
+
+  {{ partial:layout/inner class="py-30 md:py-60" }}
+
+    {{ partial:layout/grid }}
+
+      <div class="sm:col-span-full md:col-span-2">
+
+        {{ partial:components/headings/byline }}
+          {{ appointment_subtitle | nl2br }}
+        {{ /partial:components/headings/byline }}
+
+        {{ partial:components/headings/h2 class="{{ theme }}" }}
+          {{ appointment_title | nl2br }}
+        {{ /partial:components/headings/h2 }}
+        
+      </div>
+
+    {{ /partial:layout/grid }}
+    <div id="appointment-form">
+      <appointment-form></appointment-form>
+    </div>
+
+  {{ /partial:layout/inner }}
+
+</div>

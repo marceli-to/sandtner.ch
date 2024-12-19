@@ -1,0 +1,14 @@
+title: 'Termin vereinbaren'
+fields:
+  -
+    import: theme_selector
+  -
+    handle: appointment_subtitle
+    field:
+      type: textarea
+      display: Subtitel
+  -
+    handle: appointment_title
+    field:
+      type: textarea
+      display: Titel

@@ -115,6 +115,13 @@ tabs:
                       fields:
                         -
                           import: contact
+                    appointment:
+                      display: 'Termin vereinbaren'
+                      instructions: 'Termin vereinbaren hinzufügen.'
+                      icon: dashboard-layout
+                      fields:
+                        -
+                          import: appointment
   seo:
     display: SEO
     sections:
