@@ -15,4 +15,4 @@ use App\Http\Controllers\Api\ContactController;
 |
 */
 
-Route::post('/contact/submission', [ContactController::class, 'submit']);
+Route::post('/contact/submission', [ContactController::class, 'submission']);

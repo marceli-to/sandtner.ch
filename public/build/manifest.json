@@ -1,8 +1,17 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-58d8df04.css",
+    "file": "assets/app-533e8f0d.css",
     "isEntry": true,
     "src": "resources/css/app.css"
+  },
+  "resources/css/mapbox.css": {
+    "file": "assets/mapbox-b238d823.css",
+    "isEntry": true,
+    "src": "resources/css/mapbox.css"
+  },
+  "resources/img/marker.svg": {
+    "file": "assets/marker-26681d7b.svg",
+    "src": "resources/img/marker.svg"
   },
   "resources/js/app.css": {
     "file": "assets/app-7430d6be.css",
@@ -12,8 +21,13 @@
     "css": [
       "assets/app-7430d6be.css"
     ],
-    "file": "assets/app-75223152.js",
+    "file": "assets/app-09901e5d.js",
     "isEntry": true,
     "src": "resources/js/app.js"
+  },
+  "resources/js/mapbox.js": {
+    "file": "assets/mapbox-ec1ace1b.js",
+    "isEntry": true,
+    "src": "resources/js/mapbox.js"
   }
 }

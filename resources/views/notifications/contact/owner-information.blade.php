@@ -1,18 +1,15 @@
 <x-mail::message>
   <div class="text-base">
-    Guten Tag<br><br>Vielen Dank für Ihre Anmeldung.
+    Kontaktanfrage
   </div>
   <br>
+  @if ($data['subject'])
   <div class="text-base">
-    <strong>Veranstaltung</strong><br>
-    {{ $data['title'] }}
+    <strong>Betreff</strong><br>
+    {{ $data['subject'] }}
   </div>
   <br>
-  <div class="text-base">
-    <strong>Datum</strong><br>
-    {{ $data['date'] }}
-  </div>
-  <br>
+@endif
   @if ($data['firstname'])
     <div class="text-base">
       <strong>Vorname</strong><br>
@@ -34,15 +31,14 @@
     </div>
     <br>
   @endif
-  @if ($data['number_of_people'])
+  @if ($data['email'])
     <div class="text-base">
-      <strong>Anzahl Personen</strong><br>
-      {{ $data['number_of_people'] }}
+      <strong>Nachricht</strong><br>
+      {{ nl2br($data['message']) }}
     </div>
     <br>
   @endif
-  
   <footer>
-    <br>Museum Neuthal<br>Textil- & Industriekultur<br>Im Neuthal 6<br>8344 Bäretswil
+    <br>Carrosserie Sandtner AG<br>Speckstrasse 11<br>8330 Pfäffikon ZH
   </footer>
 </x-mail::message>

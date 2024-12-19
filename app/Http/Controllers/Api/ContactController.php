@@ -4,13 +4,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Statamic\Facades\Entry;
 use Illuminate\Support\Facades\Notification;
-// use App\Notifications\UserEventRegistration;
-// use App\Notifications\OwnerEventRegistration;
+use App\Notifications\Contact\OwnerInformation;
 use Illuminate\Support\Facades\Validator;
 
 class ContactController extends Controller
 {
-  public function submit(Request $request)
+  public function submission(Request $request)
   {
     $validationResult = $this->validateRequest($request);
 
@@ -19,28 +18,28 @@ class ContactController extends Controller
       return $validationResult;
     }
 
-    $slug = $request->input('firstname') . ' ' . $request->input('name');
+    $slug = $request->input('firstname') . '-' . $request->input('name') . '-' . $request->input('email');
 
     // build data
     $data = [
+      'submitted_at' => date('d.m.Y', time()),
+      'title' => $request->input('firstname') . ' ' . $request->input('name') . ', ' . $request->input('email'),
       'name' => $request->input('name'),
       'firstname' => $request->input('firstname'),
       'email' => $request->input('email'),
+      'subject' => $request->input('subject'),
+      'message' => $request->input('message'),
     ];
 
     $entry = Entry::make()
-      ->collection('contact_form_submissions')
+      ->collection('contact_submissions')
       ->slug($slug)
       ->data($data)
       ->save();
-    
-    // Notification::route('mail', $request->input('email'))
-    //   ->notify(new UserEventRegistration($data)
-    // );
 
-    // Notification::route('mail', env('MAIL_TO'))
-    //   ->notify(new OwnerEventRegistration($data)
-    // );
+    Notification::route('mail', env('MAIL_TO'))
+      ->notify(new OwnerInformation($data)
+    );
 
     return response()->json(['message' => 'Store successful']);
   }
@@ -77,6 +76,8 @@ class ContactController extends Controller
       'name' => 'required',
       'firstname' => 'required',
       'email' => 'required|email|regex:/^[^\s@]+@[^\s@]+\.[^\s@]+$/',
+      'subject' => 'required',
+      'message' => 'required',
     ];
 
     // Set validation messages
@@ -86,6 +87,8 @@ class ContactController extends Controller
       'email.required' => 'E-Mail-Adresse ist erforderlich',
       'email.email' => 'E-Mail-Adresse muss gültig sein',
       'email.regex' => 'E-Mail-Adresse muss gültig sein',
+      'subject.required' => 'Betreff ist erforderlich',
+      'message.required' => 'Nachricht ist erforderlich',
     ];
     
     return [

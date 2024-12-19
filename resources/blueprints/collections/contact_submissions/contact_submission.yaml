@@ -1,0 +1,64 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: submitted_at
+            field:
+              type: date
+              display: Datum
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: firstname
+            field:
+              type: text
+              display: Vorname
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+          -
+            handle: email
+            field:
+              type: text
+              display: E-Mail
+          -
+            handle: subject
+            field:
+              type: text
+              display: Betreff
+          -
+            handle: message
+            field:
+              type: textarea
+              display: Nachricht
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - contact_submissions
+              max_items: 1
+              listable: false
+              localizable: true
+title: Kontaktformular

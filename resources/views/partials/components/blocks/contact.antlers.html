@@ -1,3 +1,5 @@
+{{ vite src="resources/css/mapbox.css" }}
+{{ vite src="resources/js/mapbox.js" }}
 <div class="{{ theme }}">
 
   {{ partial:layout/inner class="py-30 md:py-60" }}
@@ -21,6 +23,9 @@
     {{ partial:layout/grid class="flex flex-col space-y-20 sm:space-y-0 sm:gap-y-30 md:gap-y-45 mt-20 md:mt-40" }}
       <div id="contact-form" class="md:col-span-2">
         <contact-form></contact-form>
+      </div>
+      <div id="contact-map" class="md:col-span-4 aspect-[16/10]">
+
       </div>
     {{ /partial:layout/grid }}
 

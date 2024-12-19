@@ -1,7 +1,7 @@
 <template>
   <template v-if="formSuccess">
     <success-alert>
-      Vielen Dank für Ihre Anmeldung!
+      Vielen Dank für Ihre Anfrage!
     </success-alert>
   </template>
   <template v-if="formError">
