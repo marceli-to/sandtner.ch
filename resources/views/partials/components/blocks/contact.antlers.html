@@ -1,0 +1,29 @@
+<div class="{{ theme }}">
+
+  {{ partial:layout/inner class="py-30 md:py-60" }}
+
+    {{ partial:layout/grid }}
+
+      <div class="sm:col-span-full md:col-span-2">
+
+        {{ partial:components/headings/h2 class="{{ theme }}" has_after="true" }}
+          {{ contact_title | nl2br }}
+        {{ /partial:components/headings/h2 }}
+        
+      </div>
+
+      <div class="sm:col-span-full md:col-span-4 max-w-prose">
+        {{ text | nl2br }}
+      </div>
+
+    {{ /partial:layout/grid }}
+
+    {{ partial:layout/grid class="flex flex-col space-y-20 sm:space-y-0 sm:gap-y-30 md:gap-y-45 mt-20 md:mt-40" }}
+      <div id="contact-form" class="md:col-span-2">
+        <contact-form></contact-form>
+      </div>
+    {{ /partial:layout/grid }}
+
+  {{ /partial:layout/inner }}
+
+</div>

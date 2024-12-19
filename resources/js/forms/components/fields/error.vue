@@ -1,5 +1,5 @@
 <template>
-  <div v-if="error" :class="classes" class="text-crimson absolute top-3 right-0">{{ error }}</div>
+  <div v-if="error" :class="classes" class="text-red-600 absolute top-3 right-0">{{ error }}</div>
 </template>
 <script setup>
 

@@ -4,8 +4,9 @@
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       @focus="$emit('update:error', '')"
+      :placeholder="placeholder"
       :class="[
-        { '!border-crimson': error },
+        { '!border-red-600': error },
       ]">
     </textarea>
     <Error :error="error" />
@@ -16,6 +17,10 @@
 import Error from './error.vue';
 const props = defineProps({
   modelValue: {
+    type: String,
+    default: ''
+  },
+  placeholder: {
     type: String,
     default: ''
   },

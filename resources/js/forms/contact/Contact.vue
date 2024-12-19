@@ -9,7 +9,7 @@
       Bitte überprüfen Sie die eingegebenen Daten.
     </error-alert>
   </template>
-  <form @submit.prevent="submitForm" class="space-y-10 lg:space-y-25">
+  <form @submit.prevent="submitForm" class="space-y-10 lg:space-y-20">
     <form-group>
       <form-text-field 
         v-model="form.firstname" 
@@ -35,10 +35,26 @@
         placeholder="E-Mail *"
       />
     </form-group>
+    <form-group>
+      <form-text-field 
+        v-model="form.subject" 
+        :error="errors.subject"
+        @update:error="errors.subject = $event"
+        placeholder="Betreff *"
+      />
+    </form-group>
+    <form-group>
+      <form-textarea-field 
+        v-model="form.message" 
+        :error="errors.message"
+        @update:error="errors.message = $event"
+        placeholder="Ihre Nachricht *"
+      />
+    </form-group>
     <form-group class="!mt-35">
       <form-button 
         type="submit" 
-        :label="'Anmelden'"
+        :label="'Anfrage senden'"
         :disabled="isSubmitting"
         :submitting="isSubmitting"
       />
@@ -64,15 +80,19 @@ const formSuccess = ref(false);
 const formError = ref(false);
 
 const form = ref({
-  name: null  ,
+  name: null,
   firstname: null,
   email: null,
+  subject: null,
+  message: null
 });
 
 const errors = ref({
   name: '',
   firstname: '',
   email: '',
+  subject: '',
+  message: '',
 });
 
 async function submitForm() {
@@ -91,17 +111,19 @@ async function submitForm() {
 
 function handleSuccess() {
   form.value = {
-    event_id: props.eventId,
     name: null,
     firstname: null,
     email: null,
-    number_of_people: null,
+    subject: null,
+    message: null
   };
   
   errors.value = {
     name: '',
     firstname: '',
     email: '',
+    subject: '',
+    message: '',
   };
   
   isSubmitting.value = false;
