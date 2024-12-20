@@ -1,41 +1,42 @@
 <div class="{{ theme }}">
+  <div data-observe data-animation-slide-up>
+    {{ partial:layout/inner class="py-30 md:py-60" }}
 
-  {{ partial:layout/inner class="py-30 md:py-60" }}
+      {{ partial:layout/grid }}
 
-    {{ partial:layout/grid }}
+        <div class="sm:col-span-full md:col-span-2">
+          
+          {{ partial:components/headings/byline }}
+            {{ service_subtitle | nl2br }}
+          {{ /partial:components/headings/byline }}
 
-      <div class="sm:col-span-full md:col-span-2">
-        
-        {{ partial:components/headings/byline }}
-          {{ service_subtitle | nl2br }}
-        {{ /partial:components/headings/byline }}
-
-        {{ partial:components/headings/h2 class="{{ theme }}" }}
-          {{ service_title | nl2br }}
-        {{ /partial:components/headings/h2 }}
-        
-      </div>
-
-      <div class="sm:col-span-full md:col-span-4 md:pt-22 max-w-prose text-white">
-        {{ text | nl2br }}
-      </div>
-
-    {{ /partial:layout/grid }}
-
-    {{ partial:layout/grid class="flex flex-col space-y-20 sm:space-y-0" }}
-      {{ service_items }}
-        <div class="col-span-full md:col-span-3 p-15 lg:p-20 bg-silver [&>p]:!mb-0 relative">
-          {{ partial:components/headings/h3 class="font-extrabold text-lg lg:text-xl uppercase leading-[1.2] mb-10 lg:mb-20" }}
-            {{ item_title | nl2br }}
-          {{ /partial:components/headings/h3 }}
-          {{ if item_icon }}
-            {{ partial:icons/services/{{ item_icon }} class="absolute top-22 right-15 lg:right-20" }}
-          {{ /if }}
-          {{ item_text }}
+          {{ partial:components/headings/h2 class="{{ theme }}" }}
+            {{ service_title | nl2br }}
+          {{ /partial:components/headings/h2 }}
+          
         </div>
-      {{ /service_items }}
-    {{ /partial:layout/grid }}
 
-  {{ /partial:layout/inner }}
+        <div class="sm:col-span-full md:col-span-4 md:pt-22 max-w-prose text-white">
+          {{ text | nl2br }}
+        </div>
+
+      {{ /partial:layout/grid }}
+
+      {{ partial:layout/grid class="flex flex-col space-y-20 sm:space-y-0" }}
+        {{ service_items }}
+          <div class="col-span-full md:col-span-3 p-15 lg:p-20 bg-silver [&>p]:!mb-0 relative">
+            {{ partial:components/headings/h3 class="font-extrabold text-lg lg:text-xl uppercase leading-[1.2] mb-10 lg:mb-20" }}
+              {{ item_title | nl2br }}
+            {{ /partial:components/headings/h3 }}
+            {{ if item_icon }}
+              {{ partial:icons/services/{{ item_icon }} class="absolute top-22 right-15 lg:right-20" }}
+            {{ /if }}
+            {{ item_text }}
+          </div>
+        {{ /service_items }}
+      {{ /partial:layout/grid }}
+
+    {{ /partial:layout/inner }}
+    </div>
 
 </div>

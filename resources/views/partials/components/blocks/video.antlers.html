@@ -1,27 +1,29 @@
 <div class="{{ theme }}">
-  {{ partial:layout/inner class="py-30 md:py-60" }}
-    {{ partial:layout/grid }}
-      <div class="sm:col-span-full md:col-span-2">
-        
-        {{ partial:components/headings/byline }}
-          {{ video_subtitle | nl2br }}
-        {{ /partial:components/headings/byline }}
+  <div data-observe data-animation-slide-up>
+    {{ partial:layout/inner class="py-30 md:py-60" }}
+      {{ partial:layout/grid }}
+        <div class="sm:col-span-full md:col-span-2">
+          
+          {{ partial:components/headings/byline }}
+            {{ video_subtitle | nl2br }}
+          {{ /partial:components/headings/byline }}
 
-        {{ partial:components/headings/h2 class="{{ theme }} " }}
-          {{ video_title | nl2br }}
-        {{ /partial:components/headings/h2 }}
-        
+          {{ partial:components/headings/h2 class="{{ theme }} " }}
+            {{ video_title | nl2br }}
+          {{ /partial:components/headings/h2 }}
+          
+        </div>
+      {{ /partial:layout/grid }}
+      <div class="relative w-full aspect-video">
+        <video 
+          class="absolute inset-0 w-full h-full object-cover"
+          controls
+          preload="metadata"
+        >
+          <source src="{{ video_file }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
-    {{ /partial:layout/grid }}
-    <div class="relative w-full aspect-video">
-      <video 
-        class="absolute inset-0 w-full h-full object-cover"
-        controls
-        preload="metadata"
-      >
-        <source src="{{ video_file }}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    {{ /partial:layout/inner }}
     </div>
-  {{ /partial:layout/inner }}
 </div>

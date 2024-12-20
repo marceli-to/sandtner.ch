@@ -1,20 +1,22 @@
 <div class="{{ theme }}">
-  {{ partial:layout/inner class="py-30 md:py-60" }}
-  {{ partial:layout/grid }}
-  <div class="sm:col-span-full md:col-span-2">
+  <div data-observe data-animation-slide-up>
+    {{ partial:layout/inner class="py-30 md:py-60" }}
+      {{ partial:layout/grid }}
+        <div class="sm:col-span-full md:col-span-2">
 
-    {{ partial:components/headings/byline }}
-      {{ street_view_subtitle | nl2br }}
-    {{ /partial:components/headings/byline }}
+          {{ partial:components/headings/byline }}
+            {{ street_view_subtitle | nl2br }}
+          {{ /partial:components/headings/byline }}
 
-    {{ partial:components/headings/h2 class="{{ theme }} " }}
-      {{ street_view_title | nl2br }}
-    {{ /partial:components/headings/h2 }}
+          {{ partial:components/headings/h2 class="{{ theme }} " }}
+            {{ street_view_title | nl2br }}
+          {{ /partial:components/headings/h2 }}
 
+        </div>
+      {{ /partial:layout/grid }}
+      <div class="relative w-full aspect-video">
+        <iframe class="relative w-full aspect-video" src="{{ code }}"></iframe>
+      </div>
+    {{ /partial:layout/inner }}
   </div>
-  {{ /partial:layout/grid }}
-  <div class="relative w-full aspect-video">
-    <iframe class="relative w-full aspect-video" src="{{ code }}"></iframe>
-  </div>
-  {{ /partial:layout/inner }}
 </div>

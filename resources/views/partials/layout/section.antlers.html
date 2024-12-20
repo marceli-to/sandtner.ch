@@ -1,42 +1,44 @@
 <div class="{{ theme }}">
-  {{ partial:layout/inner class="py-30 md:py-60" }}
-    {{ partial:layout/grid }}
-      
-      <div class="sm:col-span-full md:col-span-2">
+  <div data-observe data-animation-slide-up>
+    {{ partial:layout/inner class="py-30 md:py-60" }}
+      {{ partial:layout/grid }}
         
-        {{ partial:components/headings/byline }}
-          {{ section_subtitle | nl2br }}
-        {{ /partial:components/headings/byline }}
+        <div class="sm:col-span-full md:col-span-2">
+          
+          {{ partial:components/headings/byline }}
+            {{ section_subtitle | nl2br }}
+          {{ /partial:components/headings/byline }}
 
-        {{ partial:components/headings/h2 class="{{ theme }}" has_after="true" }}
-          {{ section_title | nl2br }}
-        {{ /partial:components/headings/h2 }}
+          {{ partial:components/headings/h2 class="{{ theme }}" has_after="true" }}
+            {{ section_title | nl2br }}
+          {{ /partial:components/headings/h2 }}
 
-      </div>
+        </div>
 
-      {{ if blocks }}
+        {{ if blocks }}
 
-        {{ blocks }}
+          {{ blocks }}
 
-          {{ if type == 'text-one-column' }}
-            <div class="sm:col-span-full md:col-span-4 md:pt-22 max-w-prose">
-              {{ partial:components/blocks/editor :content="text" }}
-            </div>
-          {{ /if }}
+            {{ if type == 'text-one-column' }}
+              <div class="sm:col-span-full md:col-span-4 md:pt-22 max-w-prose">
+                {{ partial:components/blocks/editor :content="text" }}
+              </div>
+            {{ /if }}
 
-          {{ if type == 'text-two-columns' }}
-            <div class="mb-20 md:mb-0 sm:col-span-full md:col-span-2 md:pt-22 max-w-prose">
-              {{ partial:components/blocks/editor :content="text_left"}}
-            </div>
-            <div class="sm:col-span-full md:col-span-2 md:pt-22 max-w-prose">
-              {{ partial:components/blocks/editor :content="text_right"}}
-            </div>
-          {{ /if }}
+            {{ if type == 'text-two-columns' }}
+              <div class="mb-20 md:mb-0 sm:col-span-full md:col-span-2 md:pt-22 max-w-prose">
+                {{ partial:components/blocks/editor :content="text_left"}}
+              </div>
+              <div class="sm:col-span-full md:col-span-2 md:pt-22 max-w-prose">
+                {{ partial:components/blocks/editor :content="text_right"}}
+              </div>
+            {{ /if }}
 
-        {{ /blocks }}
+          {{ /blocks }}
 
-      {{ /if }}
+        {{ /if }}
 
-    {{ /partial:layout/grid }}
-  {{ /partial:layout/inner }}
+      {{ /partial:layout/grid }}
+    {{ /partial:layout/inner }}
+  </div>
 </div>
