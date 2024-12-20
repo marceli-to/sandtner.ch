@@ -4,7 +4,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Statamic\Facades\Entry;
 use Illuminate\Support\Facades\Notification;
-use App\Notifications\Contact\OwnerInformation;
+use App\Notifications\Appointment\OwnerInformation;
+use App\Notifications\Appointment\UserConfirmation;
 use Illuminate\Support\Facades\Validator;
 
 class AppointmentController extends Controller
@@ -42,9 +43,13 @@ class AppointmentController extends Controller
       ->data($data)
       ->save();
 
-    // Notification::route('mail', env('MAIL_TO'))
-    //   ->notify(new OwnerInformation($data)
-    // );
+    Notification::route('mail', env('MAIL_TO'))
+      ->notify(new OwnerInformation($data)
+    );
+
+    Notification::route('mail', $request->input('email'))
+      ->notify(new UserConfirmation($data)
+    );
 
     return response()->json(['message' => 'Store successful']);
   }

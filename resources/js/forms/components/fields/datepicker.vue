@@ -5,7 +5,11 @@
         {{ currentMonth }} {{ currentYear }}
       </div>
       <div class="navigation flex gap-12">
-        <button @click="previousMonth" type="button" class="text-tangerine hover:text-white text-lg">
+        <button @click="previousMonth" type="button" :disabled="isPreviousMonthDisabled" 
+          :class="[
+            'text-lg',
+            isPreviousMonthDisabled ? 'text-gray-600 cursor-not-allowed' : 'text-tangerine hover:text-white'
+          ]">
           &#8592;
         </button>
         <button @click="nextMonth" type="button" class="text-tangerine hover:text-white text-lg">
@@ -15,7 +19,6 @@
     </div>
 
     <div class="calendar">
-      
       <!-- Weekday headers -->
       <div class="grid grid-cols-7 gap-x-12 mb-4">
         <template v-for="day in weekDays" :key="day">
@@ -25,13 +28,16 @@
 
       <!-- Calendar days -->
       <div class="grid grid-cols-7 gap-8">
-        <template v-for="{ date, isCurrentMonth, isSelected } in calendarDays" :key="date">
+        <template v-for="{ date, isCurrentMonth, isSelected, isPast } in calendarDays" :key="date">
           <button
             @click="selectDate(date)"
+            :disabled="isPast"
             :class="[
               'w-full aspect-[16/10] flex items-center justify-center pb-2',
               isCurrentMonth ? 'text-white' : 'text-gray-600',
-              isSelected ? 'bg-tangerine text-white' : 'hover:bg-silver hover:text-graphite'
+              isPast ? 'opacity-50 cursor-not-allowed' : '',
+              !isPast && isSelected ? 'bg-tangerine text-white' : '',
+              !isPast && !isSelected ? 'hover:bg-silver hover:text-graphite' : ''
             ]"
           >
             {{ date.getDate() }}
@@ -56,6 +62,8 @@ const emit = defineEmits(['update:modelValue'])
 
 const currentDate = ref(new Date(props.modelValue))
 const selectedDate = ref(new Date(props.modelValue))
+const today = new Date()
+today.setHours(0, 0, 0, 0)
 
 const weekDays = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
 
@@ -67,6 +75,19 @@ const currentYear = computed(() => {
   return currentDate.value.getFullYear()
 })
 
+const isPreviousMonthDisabled = computed(() => {
+  const firstOfCurrentMonth = new Date(
+    currentDate.value.getFullYear(),
+    currentDate.value.getMonth(),
+    1
+  )
+  return firstOfCurrentMonth <= today
+})
+
+function isPastDate(date) {
+  return date < today
+}
+
 const calendarDays = computed(() => {
   const year = currentDate.value.getFullYear()
   const month = currentDate.value.getMonth()
@@ -74,7 +95,6 @@ const calendarDays = computed(() => {
   const firstDayOfMonth = new Date(year, month, 1)
   const lastDayOfMonth = new Date(year, month + 1, 0)
   
-  // Adjust to start week on Monday (1) instead of Sunday (0)
   let firstDayOfWeek = firstDayOfMonth.getDay() || 7
   firstDayOfWeek = firstDayOfWeek - 1
   
@@ -86,7 +106,8 @@ const calendarDays = computed(() => {
     days.push({
       date,
       isCurrentMonth: false,
-      isSelected: isSameDay(date, selectedDate.value)
+      isSelected: isSameDay(date, selectedDate.value),
+      isPast: isPastDate(date)
     })
   }
   
@@ -96,18 +117,20 @@ const calendarDays = computed(() => {
     days.push({
       date,
       isCurrentMonth: true,
-      isSelected: isSameDay(date, selectedDate.value)
+      isSelected: isSameDay(date, selectedDate.value),
+      isPast: isPastDate(date)
     })
   }
   
-  // Add days from next month to complete the grid
-  const remainingDays = 42 - days.length // 6 rows * 7 days
+  // Add days from next month
+  const remainingDays = 42 - days.length
   for (let i = 1; i <= remainingDays; i++) {
     const date = new Date(year, month + 1, i)
     days.push({
       date,
       isCurrentMonth: false,
-      isSelected: isSameDay(date, selectedDate.value)
+      isSelected: isSameDay(date, selectedDate.value),
+      isPast: isPastDate(date)
     })
   }
   
@@ -129,24 +152,25 @@ function toLocalISOString(date) {
 
 function createDate(year, month, day) {
   const date = new Date(year, month, day);
-  // Adjust for timezone offset
   const userTimezoneOffset = date.getTimezoneOffset() * 60000;
   return new Date(date.getTime() - userTimezoneOffset);
 }
 
 function selectDate(date) {
-
+  if (isPastDate(date)) return;
+  
   const localDate = createDate(
     date.getFullYear(),
     date.getMonth(),
     date.getDate()
   );
-  console.log('Selected date:', localDate, 'ISO:', toLocalISOString(localDate));
   selectedDate.value = localDate;
   emit('update:modelValue', localDate);
 }
 
 function previousMonth() {
+  if (isPreviousMonthDisabled.value) return;
+  
   currentDate.value = new Date(
     currentDate.value.getFullYear(),
     currentDate.value.getMonth() - 1,

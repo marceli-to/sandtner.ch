@@ -31,7 +31,7 @@
     </div>
     <br>
   @endif
-  @if ($data['email'])
+  @if ($data['message'])
     <div class="text-base">
       <strong>Nachricht</strong><br>
       {{ nl2br($data['message']) }}
