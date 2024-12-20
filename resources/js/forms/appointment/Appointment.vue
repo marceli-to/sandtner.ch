@@ -36,7 +36,7 @@
               v-model="form.message" 
               :error="errors.message"
               @update:error="errors.message = $event"
-              class="md:min-h-[256px] lg:min-h-[266px]"
+              class="md:min-h-[256px] lg:min-h-[271px]"
               placeholder="Ihre Nachricht"
             />
           </form-group>
@@ -82,17 +82,15 @@
           <div>
             <p>Damit wir Ihre Terminanfrage bestätigen können, müssen Sie alle Felder ausfüllen. Nachdem wir Ihre Anfrage im System bearbeitet haben, erhalten Sie per E-Mail eine Bestätigung.</p>
           </div>
+          <form-group :classes="'lg:!mt-43'">
+            <form-button 
+              type="submit" 
+              :label="'Terminanfrage senden'"
+              :disabled="isSubmitting"
+              :submitting="isSubmitting"
+            />
+          </form-group>
         </div>
-      </div>
-      <div class="sm:col-span-2 sm:col-start-5">
-        <form-group>
-          <form-button 
-            type="submit" 
-            :label="'Terminanfrage senden'"
-            :disabled="isSubmitting"
-            :submitting="isSubmitting"
-          />
-        </form-group>
       </div>
     </div>
   </form>
