@@ -1,0 +1,70 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: appointment_date
+            field:
+              type: date
+              display: Datum
+          -
+            handle: appointment_time
+            field:
+              type: text
+              display: Zeit
+          -
+            handle: appointment_reason
+            field:
+              type: text
+              display: Grund
+          -
+            handle: appointment_control_plate
+            field:
+              type: text
+              display: Kontrollschild
+          -
+            handle: appointment_message
+            field:
+              type: textarea
+              display: Nachricht
+          -
+            handle: appointment_firstname
+            field:
+              type: text
+              display: Vorname
+          -
+            handle: appointment_name
+            field:
+              type: text
+              display: Name
+          -
+            handle: appointment_email
+            field:
+              type: text
+              display: E-Mail
+          -
+            handle: appointment_phone
+            field:
+              type: text
+              display: Telefon
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+title: Terminanfragen

@@ -16,6 +16,7 @@
  */
 return [
   'Anmeldungen' => [
-    'Kontaktanfragen' => 'contact_submissions'
+    'Kontaktanfragen' => 'contact_submissions',
+    'Terminanfragen' => 'appointment_requests',
   ],
 ];

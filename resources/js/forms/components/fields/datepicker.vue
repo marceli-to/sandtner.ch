@@ -1,6 +1,6 @@
 <template>
-  <div class="date-picker bg-graphite py-10 px-30 w-full">
-    <div class="header flex justify-between items-center mb-15">
+  <div class="date-picker bg-graphite py-10 pt-5 px-20 w-full">
+    <div class="header flex justify-between items-center mb-5">
       <div class="text-white font-extrabold uppercase">
         {{ currentMonth }} {{ currentYear }}
       </div>
@@ -15,6 +15,7 @@
     </div>
 
     <div class="calendar">
+      
       <!-- Weekday headers -->
       <div class="grid grid-cols-7 gap-x-12 mb-4">
         <template v-for="day in weekDays" :key="day">
@@ -28,7 +29,7 @@
           <button
             @click="selectDate(date)"
             :class="[
-              'w-full aspect-square flex items-center justify-center',
+              'w-full aspect-[16/10] flex items-center justify-center pb-2',
               isCurrentMonth ? 'text-white' : 'text-gray-600',
               isSelected ? 'bg-tangerine text-white' : 'hover:bg-silver hover:text-graphite'
             ]"
@@ -119,9 +120,30 @@ function isSameDay(date1, date2) {
          date1.getFullYear() === date2.getFullYear()
 }
 
+function toLocalISOString(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function createDate(year, month, day) {
+  const date = new Date(year, month, day);
+  // Adjust for timezone offset
+  const userTimezoneOffset = date.getTimezoneOffset() * 60000;
+  return new Date(date.getTime() - userTimezoneOffset);
+}
+
 function selectDate(date) {
-  selectedDate.value = date
-  emit('update:modelValue', date)
+
+  const localDate = createDate(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate()
+  );
+  console.log('Selected date:', localDate, 'ISO:', toLocalISOString(localDate));
+  selectedDate.value = localDate;
+  emit('update:modelValue', localDate);
 }
 
 function previousMonth() {

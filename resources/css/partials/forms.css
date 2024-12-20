@@ -1,11 +1,18 @@
-input[type=text],
-input[type=email],
-input[type=number],
-textarea {
-  @apply block bg-silver w-full border-none placeholder:!text-graphite py-5 pl-15 pr-5 placeholder:leading-none !outline-none !ring-0
+form input[type=text],
+form input[type=email],
+form input[type=number],
+form input[type=password],
+form input[type=telephone],
+form select,
+form textarea {
+  @apply appearance-none block bg-silver w-full border-none placeholder:!text-graphite py-5 pl-15 pr-5 placeholder:leading-none !outline-none !ring-0
 }
 
-textarea {
-  @apply min-h-100 !py-5 !pl-15 !pr-5 placeholder:pt-5;
+form textarea {
+  @apply min-h-100 placeholder:pt-5;
   field-sizing: content;
+}
+
+select {
+
 }

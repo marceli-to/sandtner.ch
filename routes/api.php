@@ -1,9 +1,8 @@
 <?php
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\EventController;
 use App\Http\Controllers\Api\ContactController;
-
+use App\Http\Controllers\Api\AppointmentController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,3 +15,4 @@ use App\Http\Controllers\Api\ContactController;
 */
 
 Route::post('/contact/submission', [ContactController::class, 'submission']);
+Route::post('/appointment/request', [AppointmentController::class, 'request']);
