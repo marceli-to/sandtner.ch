@@ -6,6 +6,11 @@ fields:
       type: toggle
       display: Debug
   -
+    handle: has_animations
+    field:
+      type: toggle
+      display: 'Animation Inhalte'
+  -
     import: theme_selector
   -
     handle: template
