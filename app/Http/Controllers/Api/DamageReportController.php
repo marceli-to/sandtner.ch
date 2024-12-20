@@ -118,7 +118,7 @@ class DamageReportController extends Controller
       'email.regex' => 'E-Mail-Adresse muss gültig sein',
       'phone.required' => 'Telefon ist erforderlich',
       'message.required' => 'Nachricht ist erforderlich',
-      'control_plate.required' => 'Kennzeichen ist erforderlich',
+      'control_plate.required' => 'Kontrollschild ist erforderlich',
       'damage_description.required' => 'Beschreibung ist erforderlich',
       'vehicle.required' => 'Fahrzeugmarke, Fahrzeugtyp ist erforderlich',
       'insurance_company.required' => 'Versicherungsgesellschaft ist erforderlich',

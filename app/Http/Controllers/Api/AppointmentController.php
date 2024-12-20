@@ -100,7 +100,7 @@ class AppointmentController extends Controller
       'date.required' => 'Datum ist erforderlich',
       'time.required' => 'Zeit ist erforderlich',
       'reason.required' => 'Grund ist erforderlich',
-      'control_plate.required' => 'Kennzeichen ist erforderlich',
+      'control_plate.required' => 'Kontrollschild ist erforderlich',
       'message.required' => 'Nachricht ist erforderlich',
       'name.required' => 'Name ist erforderlich',
       'firstname.required' => 'Vorname ist erforderlich',
