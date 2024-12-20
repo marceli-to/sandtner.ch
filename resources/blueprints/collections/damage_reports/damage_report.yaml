@@ -66,28 +66,28 @@ tabs:
             field:
               container: assets
               type: assets
-              display: 'Bilder Fahrzeugausweis'
+              display: 'Fotos Fahrzeugausweis'
               folder: uploads_schadenmeldung
           -
             handle: images_mileage
             field:
               container: assets
               type: assets
-              display: 'Bilder Kilometerstand'
+              display: 'Fotos Kilometerstand'
               folder: uploads_schadenmeldung
           -
             handle: images_vehicle
             field:
               container: assets
               type: assets
-              display: 'Bilder Fahrzeug'
+              display: 'Fotos Fahrzeug'
               folder: uploads_schadenmeldung
           -
             handle: images_damage
             field:
               container: assets
               type: assets
-              display: 'Bilder Detailaufnahme'
+              display: 'Fotos Detailaufnahme'
               folder: uploads_schadenmeldung
   sidebar:
     display: Sidebar

@@ -18,10 +18,7 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue'
-
 const times = ['11:30', '14:30', '15:15', '16:45']
-
 const props = defineProps({
   modelValue: {
     type: String,

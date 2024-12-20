@@ -5,13 +5,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Statamic\Facades\Entry;
 use Illuminate\Support\Facades\Notification;
-use App\Notifications\Appointment\OwnerInformation;
-use App\Notifications\Appointment\UserConfirmation;
+use App\Notifications\DamageReport\OwnerInformation;
+use App\Notifications\DamageReport\UserConfirmation;
 use Illuminate\Support\Facades\Validator;
 
 class DamageReportController extends Controller
 {
-  public function submission(Request $request)
+  public function submission(Request $request): \Illuminate\Http\JsonResponse
   {
     $validationResult = $this->validateRequest($request);
 
@@ -48,22 +48,22 @@ class DamageReportController extends Controller
       ->data($data)
       ->save();
 
-
-    // Notification::route('mail', env('MAIL_TO'))
-    //   ->notify(new OwnerInformation($data)
-    // );
-
-    // Notification::route('mail', $request->input('email'))
-    //   ->notify(new UserConfirmation($data)
-    // );
-
-    // clear statamic cache (Clear all)
+    // We need to clear the cache, otherwise the manually added assets
+    // will not show up in the backend
     \Artisan::call('cache:clear');
+
+    Notification::route('mail', env('MAIL_TO'))
+      ->notify(new OwnerInformation($data)
+    );
+
+    Notification::route('mail', $request->input('email'))
+      ->notify(new UserConfirmation($data)
+    );
 
     return response()->json(['message' => 'Store successful']);
   }
 
-  protected function validateRequest(Request $request)
+  private function validateRequest(Request $request): bool
   {
     $validationRules = $this->getValidationRules();
 
@@ -89,7 +89,7 @@ class DamageReportController extends Controller
     return TRUE;
   }
 
-  protected function getValidationRules()
+  private function getValidationRules(): array
   {
     // Set validation rules
     $validationRules = [
@@ -154,7 +154,7 @@ class DamageReportController extends Controller
     return $uploaded_images;
   }
 
-  private function cleanUpFilename($filename)
+  private function cleanUpFilename($filename): string
   {
     $extension = pathinfo($filename, PATHINFO_EXTENSION);
     $name = pathinfo($filename, PATHINFO_FILENAME);
