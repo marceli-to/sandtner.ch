@@ -67,7 +67,10 @@ h2.theme-tangerine:after {
 }
 
 
-.theme-white + .theme-white .container {
+.theme-white + .theme-white .container,
+.theme-silver + .theme-silver .container,
+.theme-graphite + .theme-graphite .container,
+.theme-tangerine + .theme-tangerine .container {
   @apply !pt-0;
 }
 
