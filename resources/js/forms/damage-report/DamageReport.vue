@@ -306,13 +306,12 @@ async function submitForm() {
 
 const resetForm = () => {
   Object.keys(form.value).forEach(key => {
-    if (key !== 'images_registration_card' && key !== 'images_mileage' && key !== 'images_vehicle' && key !== 'images_damage') {
-      form.value[key] = '';
+    if (key.startsWith('images_')) {
+      form.value[key] = [] // Set empty array for image fields
+    } else {
+      form.value[key] = '' // Set empty string for other fields
     }
-    else {
-      form.value[key] = [];
-    }
-  });
+  })
   Object.keys(errors.value).forEach(key => {
     errors.value[key] = '';
   });

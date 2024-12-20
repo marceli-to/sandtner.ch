@@ -83,8 +83,8 @@ const props = defineProps({
 
 const emit = defineEmits(['update:files'])
 
-const files = ref([])
-const error = ref('')
+const files = ref([]);
+const error = ref('');
 
 // Handle file upload
 const handleFileUpload = (event) => {
