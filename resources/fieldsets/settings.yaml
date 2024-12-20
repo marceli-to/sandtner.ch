@@ -10,6 +10,7 @@ fields:
     field:
       type: toggle
       display: 'Animation Inhalte'
+      default: true
   -
     import: theme_selector
   -
