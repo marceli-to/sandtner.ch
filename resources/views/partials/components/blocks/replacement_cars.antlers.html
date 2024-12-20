@@ -1,6 +1,6 @@
 <div class="{{ theme }}">
   
-  <div data-observe data-animation-slide-up>
+    <div {{ has_animations ? 'data-observe data-animation-slide-up' : ''}}>
 
     {{ partial:layout/inner class="py-30 md:py-60" }}
 
