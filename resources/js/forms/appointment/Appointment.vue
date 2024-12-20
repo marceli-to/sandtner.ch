@@ -29,7 +29,11 @@
            <form-select-field v-model="form.reason" :options="reasons" />
           </form-group>
           <form-group>
-            <form-text-field v-model="form.control_plate" placeholder="Kontrollschild" />
+            <form-text-field 
+              v-model="form.control_plate" 
+              placeholder="Kontrollschild *"
+              :error="errors.control_plate"
+              @update:error="errors.control_plate = $event" />
           </form-group>
           <form-group>
             <form-textarea-field 

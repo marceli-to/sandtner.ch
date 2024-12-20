@@ -1,5 +1,6 @@
 <template>
   <div class="relative">
+    <Error :error="error" />
     <input
       :type="type"
       :value="modelValue"
@@ -10,7 +11,6 @@
         { '!border-red-600': error },
       ]"
     >
-    <Error :error="error" />
   </div>
 </template>
 

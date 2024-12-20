@@ -1,0 +1,30 @@
+<div class="{{ theme }}">
+  <div data-observe data-animation-slide-up>
+    {{ partial:layout/inner class="py-30 md:py-60" }}
+
+      {{ partial:layout/grid }}
+
+        <div class="sm:col-span-full md:col-span-2">
+
+          {{ partial:components/headings/byline }}
+            {{ damage_report_subtitle | nl2br }}
+          {{ /partial:components/headings/byline }}
+
+          {{ partial:components/headings/h2 class="{{ theme }}" has_after="true" }}
+            {{ damage_report_title | nl2br }}
+          {{ /partial:components/headings/h2 }}
+          
+        </div>
+
+        <div class="sm:col-span-full md:col-span-4 max-w-prose md:pt-22">
+          {{ damage_report_text | nl2br }}
+        </div>
+
+      {{ /partial:layout/grid }}
+      <div id="damage-report-form">
+        <damage-report-form></damage-report-form>
+      </div>
+
+    {{ /partial:layout/inner }}
+  </div>
+</div>

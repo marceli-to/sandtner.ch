@@ -1,5 +1,5 @@
 <template>
-  <div :class="['flex gap-x-15 checkboxes', { 'has-error': error }]">
+  <div :class="['flex gap-x-10 items-center', { 'has-error': error }]">
     <input 
       :id="id" 
       :name="name" 
@@ -11,7 +11,7 @@
       @change="handleChange"
       @update:error="error = $event"
     />
-    <label :for="id">{{ label }}</label>
+    <label :for="id" class="cursor-pointer">{{ label }}</label>
   </div>
 </template>
 

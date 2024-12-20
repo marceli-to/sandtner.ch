@@ -13,6 +13,6 @@ form textarea {
   field-sizing: content;
 }
 
-select {
-
+form input[type="radio"] {
+  @apply appearance-none rounded-full size-16 ring-0 focus:ring-0 !ring-offset-0 !outline-none !border-none bg-silver accent-tangerine checked:bg-tangerine  checked:ring-tangerine/50;
 }

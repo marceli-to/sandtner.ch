@@ -117,11 +117,18 @@ tabs:
                           import: contact
                     appointment:
                       display: 'Termin vereinbaren'
-                      instructions: 'Termin vereinbaren hinzufügen.'
+                      instructions: 'Termin vereinbaren-Formular hinzufügen.'
                       icon: dashboard-layout
                       fields:
                         -
                           import: appointment
+                    damage_report:
+                      display: 'Schadenmeldung'
+                      instructions: 'Schadenmeldung-Formular hinzufügen.'
+                      icon: dashboard-layout
+                      fields:
+                        -
+                          import: damage_report
   seo:
     display: SEO
     sections:

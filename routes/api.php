@@ -3,6 +3,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\AppointmentController;
+use App\Http\Controllers\Api\DamageReportController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,3 +18,4 @@ use App\Http\Controllers\Api\AppointmentController;
 
 Route::post('/contact/submission', [ContactController::class, 'submission']);
 Route::post('/appointment/request', [AppointmentController::class, 'request']);
+Route::post('/damage-report/submission', [DamageReportController::class, 'submission']);

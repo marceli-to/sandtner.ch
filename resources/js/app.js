@@ -7,3 +7,4 @@ import './modules/fancybox';
 import './modules/observer';
 import './forms/contact/app';
 import './forms/appointment/app';
+import './forms/damage-report/app';

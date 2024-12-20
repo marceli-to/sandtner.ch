@@ -1,0 +1,103 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: firstname
+            field:
+              type: text
+              display: Vorname
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+          -
+            handle: email
+            field:
+              type: text
+              display: E-Mail
+          -
+            handle: phone
+            field:
+              type: text
+              display: Telefon
+          -
+            handle: message
+            field:
+              type: textarea
+              display: Nachricht
+          -
+            handle: damage_description
+            field:
+              type: textarea
+              display: Schadensbeschreibung
+          -
+            handle: vehicle
+            field:
+              type: text
+              display: Fahrzeugmarke/Fahrzeugtyp
+          -
+            handle: control_plate
+            field:
+              type: text
+              display: Kontrollschild
+          -
+            handle: insurance_company
+            field:
+              type: text
+              display: Versicherungsgesellschaft
+          -
+            handle: insurance_type
+            field:
+              type: text
+              display: Versicherungsdeckung
+          -
+            handle: images_registration_card
+            field:
+              container: assets
+              type: assets
+              display: 'Bilder Fahrzeugausweis'
+              folder: uploads_schadenmeldung
+          -
+            handle: images_mileage
+            field:
+              container: assets
+              type: assets
+              display: 'Bilder Kilometerstand'
+              folder: uploads_schadenmeldung
+          -
+            handle: images_vehicle
+            field:
+              container: assets
+              type: assets
+              display: 'Bilder Fahrzeug'
+              folder: uploads_schadenmeldung
+          -
+            handle: images_damage
+            field:
+              container: assets
+              type: assets
+              display: 'Bilder Detailaufnahme'
+              folder: uploads_schadenmeldung
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+title: Schadenmeldungen

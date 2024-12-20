@@ -1,5 +1,6 @@
 <template>
   <div class="relative">
+    <Error :error="error" />
     <textarea
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
@@ -11,7 +12,6 @@
         { '!border-red-600': error }
       ]">
     </textarea>
-    <Error :error="error" />
   </div>
 </template>
 
