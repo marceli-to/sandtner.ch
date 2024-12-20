@@ -67,3 +67,7 @@ h2.theme-tangerine:after {
 }
 
 
+.theme-white + .theme-white .container {
+  @apply !pt-0;
+}
+
