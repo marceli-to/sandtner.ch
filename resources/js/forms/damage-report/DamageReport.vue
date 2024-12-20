@@ -11,7 +11,7 @@
   </template>
   <form @submit.prevent="submitForm" class="space-y-10 lg:space-y-20 mt-30">
     <div class="flex flex-col space-y-20 md:space-y-0 md:gap-y-45 md:grid md:grid-cols-6 sm:gap-15 md:gap-30">
-      <div class="sm:col-span-2">
+      <div class="sm:col-span-3 lg:col-span-2 order-2">
         <h3 class="font-extrabold uppercase mb-10 lg:mb-15">Persönliche Daten</h3>
         <div class="flex flex-col space-y-25">
           <form-group>
@@ -59,7 +59,7 @@
           </form-group>
         </div>
       </div>
-      <div class="sm:col-span-2">
+      <div class="sm:col-span-3 lg:col-span-2 order-3">
         <h3 class="font-extrabold uppercase mb-10 lg:mb-15">Schaden</h3>
         <div class="flex flex-col space-y-25">
           <form-group>
@@ -187,8 +187,15 @@
 
         </div>
       </div>
-      <div class="sm:col-span-2">
-
+      <div class="sm:col-span-full lg:col-span-2 order-1 lg:order-3 !mb-30 md:!mb-0">
+        <div class="bg-graphite text-white px-15 py-10 lg:mt-36">
+          <h3 class="font-extrabold uppercase text-tangerine">Persönliche Daten</h3>
+          <h2 class="font-extrabold text-lg lg:text-xl uppercase leading-[1.2] mb-15 relative text-white">Anleitung</h2>
+          <p><strong><span class="text-tangerine">/</span> Fahrzeugausweis:</strong> Schrift gut lesbar mit kompletten Angaben links und rechts.</p>
+          <p><strong><span class="text-tangerine">/</span> Kilometerstand:</strong> Foto vom Gesamtkilometerstand (nicht nur Tageskilometer). Alle Angaben müssen lesbar sein. Spiegelungen beachten – falls Warnlampen leuchten, bitte separat erwähnen.</p>
+          <p><strong><span class="text-tangerine">/</span> Gesamtes Fahrzeug:</strong> Je ein Bild von Vorder- und Rückansicht, ungefähr im 45 Grad Winkel. Beide Seiten sollten sichbar sein.  Carosserie muss sauber sein – bitte auf gute Lichtverhältnisse achten.</p>
+          <p><strong><span class="text-tangerine">/</span> Detailaufnahme:</strong> Markierungen sind erwünscht. Gerne aus verschiedenen Winkeln, aber so, dass man erkennt wo am Fahrzeug der Schaden ist.</p>
+        </div>
       </div>
     </div>
   </form>
