@@ -63,7 +63,7 @@ class DamageReportController extends Controller
     return response()->json(['message' => 'Store successful']);
   }
 
-  private function validateRequest(Request $request): bool
+  private function validateRequest(Request $request)
   {
     $validationRules = $this->getValidationRules();
 
