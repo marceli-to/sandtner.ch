@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
   const selector = '[data-observe]';
   const visibleClass = 'is-visible';
   const rootMargin = '0px';
@@ -20,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, observerOptions);
 
-  document.querySelectorAll(selector).forEach(element => {
+  const elements = document.querySelectorAll(selector);
+  elements.forEach(element => {
     observer.observe(element);
   });
 });
