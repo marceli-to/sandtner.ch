@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const selector = '[data-observe]';
   const visibleClass = 'is-visible';
   const rootMargin = '0px';
-  const threshold = 0.25;
+  const threshold = 0; // Set threshold to 0 to trigger as soon as the element enters the viewport
 
   const observerOptions = {
     root: null,
@@ -14,13 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add(visibleClass);
-        observer.unobserve(entry.target);
+        observer.unobserve(entry.target); // Stop observing after the class is added
       }
     });
   }, observerOptions);
 
-  const elements = document.querySelectorAll(selector);
-  elements.forEach(element => {
+  document.querySelectorAll(selector).forEach(element => {
     observer.observe(element);
   });
 });
