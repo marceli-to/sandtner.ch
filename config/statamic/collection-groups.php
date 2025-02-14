@@ -15,8 +15,9 @@
  * ]
  */
 return [
-  'Anmeldungen' => [
+  'Anfragen' => [
     'Kontaktanfragen' => 'contact_submissions',
     'Terminanfragen' => 'appointment_requests',
+    'Schadenmeldungen' => 'damage_reports',
   ],
 ];
