@@ -57,6 +57,18 @@ fields:
                             fields:
                               -
                                 import: button
+                          image:
+                            display: Bild
+                            instructions: 'Bild hinzufügen'
+                            icon: media-image-picture-orientation
+                            fields:
+                              -
+                                handle: image
+                                field:
+                                  max_files: 1
+                                  container: assets
+                                  type: assets
+                                  display: Bild
             text-two-columns:
               display: 'Editor, 2-spaltig'
               instructions: 'Editor, 2-spaltig hinzufügen'

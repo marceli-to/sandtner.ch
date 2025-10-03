@@ -82,23 +82,26 @@
       </div>
 
       <div class="sm:col-span-6 lg:col-span-2 lg:flex lg:items-end">
-
-        <nav>
-          <ul class="flex lg:flex-col  gap-x-15">
-            {{ nav:footer }}
-              <li>
-                <a 
-                  href="{{ url }}" 
-                  title="{{ title }}" 
-                  target="{{ is_external ? '_blank' : '_self' }}"
-                  class="block uppercase hover:underline underline-offset-4">
-                  {{ title }}
-                </a>
-              </li>
-            {{ /nav:footer }}
-          </ul>
-        </nav>
-
+        <div class="flex flex-col gap-y-15">
+          <div>
+            <img src="/assets/logo-green-car-repair.jpg" alt="" class="w-full h-auto max-w-[160px]">
+          </div>
+          <nav>
+            <ul class="flex lg:flex-col  gap-x-15">
+              {{ nav:footer }}
+                <li>
+                  <a 
+                    href="{{ url }}" 
+                    title="{{ title }}" 
+                    target="{{ is_external ? '_blank' : '_self' }}"
+                    class="block uppercase hover:underline underline-offset-4">
+                    {{ title }}
+                  </a>
+                </li>
+              {{ /nav:footer }}
+            </ul>
+          </nav>
+        </div>
       </div>
 
     {{ /partial:layout/grid }}

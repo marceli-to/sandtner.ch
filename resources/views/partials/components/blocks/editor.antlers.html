@@ -10,4 +10,10 @@
     </div>
   {{ /if }}
 
+  {{ if type == 'image' }}
+    {{ partial:media/image 
+      class="w-full h-auto max-w-[200px]"
+      sizes="['lg', 'md']"}}
+  {{ /if }}
+
 {{ /content }}
